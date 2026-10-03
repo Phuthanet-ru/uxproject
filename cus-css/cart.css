@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top {
+    background-color: #001a33;
+    height: 25px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fafafa;
+    padding: 6px;
+}
+
+.header a {
+    color: #080808;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.header ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.header ul li a {
+    color: #030303;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.header ul li a:hover {
+    color: #050505;
+}
+
+.header form {
+    display: flex;
+}
+
+.header input {
+    width: 220px;
+    padding: 9px 12px;
+    border: none;
+    outline: none;
+}
+
+.header button {
+    padding: 9px 15px;
+    border: none;
+}
+
+.Account a {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.cart-container {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    align-items: flex-start;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 70px);
+}
+
+.main {
+    flex: 1;
+    margin-top: 10px;
+}
+
+.main h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.main > p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product {
+    width: 100%;
+}
+
+.product1,
+.product2,
+.product3 {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.product1 img,
+.product2 img,
+.product3 img {
+    width: 180px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.product-info p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.order-summary {
+    width: 300px;
+    padding: 25px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin-top: 100px;
+}
+
+.order-summary h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.order-summary hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.order-summary button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #001a33;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.order-summary button:hover {
+    background-color: #003366;
+}
