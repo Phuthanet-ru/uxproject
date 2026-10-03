@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header ul{
+    display: flex;
+}
+
+  <link rel="stylesheet" href="..\cus-css\cus-style.css">
