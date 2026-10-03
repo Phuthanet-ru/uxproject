@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechMart Seller — productdetail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">Tech<span>Mart</span><span style="font-size:10px;color:#6b86b8;font-weight:600;margin-left:4px;">SELLER</span></div>
+  <input class="search" placeholder="Search products, orders...">
+  <div class="seller-tag"><div class="avatar">🙂</div> TECH HOUSE</div>
+</div>
+<div class="nav">
+  <a class="navlink" href="dashboard.html">Dashboard</a>
+  <a class="navlink" href="products.html">Products</a>
+  <a class="navlink" href="orders.html">Orders</a>
+  <a class="navlink" href="chat.html">Chat</a>
+  <a class="navlink" href="store.html">Store</a>
+  <a class="navlink" href="analytics.html">Analytics</a>
+  <a class="navlink" href="wallet.html">Wallet</a>
+</div>
+
+<main>
+<section class="page active" id="productdetail">
+<h1>Product Detail</h1>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border);">
+        <strong>RTX 5070 Gaming GPU</strong>
+        <span class="badge active">Active</span>
+      </div>
+      <div class="pd-layout">
+        <div class="pd-img">PRODUCT IMAGE</div>
+        <div class="pd-info">
+          <div class="price">฿29,900</div>
+          <div class="subtle">Stock: 5</div>
+          <div style="margin-top:20px;"><button class="btn-primary">Edit Product</button> <button class="btn-ghost" onclick="location.href='products.html'">← Product</button></div>
+        </div>
+        <div class="pd-side">
+          <div class="section-title" style="padding:0 0 10px;">Performance</div>
+          <div class="row"><span>Views</span><span>1,245</span></div>
+          <div class="row"><span>Sales</span><span>32</span></div>
+        </div>
+      </div>
+    </div>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

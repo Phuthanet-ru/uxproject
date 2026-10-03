@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechMart Seller — orderdetail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">Tech<span>Mart</span><span style="font-size:10px;color:#6b86b8;font-weight:600;margin-left:4px;">SELLER</span></div>
+  <input class="search" placeholder="Search products, orders...">
+  <div class="seller-tag"><div class="avatar">🙂</div> TECH HOUSE</div>
+</div>
+<div class="nav">
+  <a class="navlink" href="dashboard.html">Dashboard</a>
+  <a class="navlink" href="products.html">Products</a>
+  <a class="navlink" href="orders.html">Orders</a>
+  <a class="navlink" href="chat.html">Chat</a>
+  <a class="navlink" href="store.html">Store</a>
+  <a class="navlink" href="analytics.html">Analytics</a>
+  <a class="navlink" href="wallet.html">Wallet</a>
+</div>
+
+<main>
+<section class="page active" id="orderdetail">
+<button class="btn-ghost" style="margin-bottom:14px;" onclick="location.href='orders.html'">← Order #10291</button>
+    <div class="card">
+      <div class="od-grid">
+        <div><strong>Customer</strong><div class="subtle">John Doe<br>Khon Kaen</div></div>
+        <div><strong>Order Summary</strong><div class="subtle">RTX 5070 ×1<br>฿29,900 · Payment: Paid</div></div>
+      </div>
+      <div class="timeline">
+        <div class="step done"><div class="dot"></div>Ordered</div>—
+        <div class="step done"><div class="dot"></div>Paid</div>—
+        <div class="step"><div class="dot"></div>Packing</div>—
+        <div class="step"><div class="dot"></div>Ship</div>—
+        <div class="step"><div class="dot"></div>Done</div>
+      </div>
+    </div>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

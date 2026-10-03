@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechMart Seller — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">Tech<span>Mart</span><span style="font-size:10px;color:#6b86b8;font-weight:600;margin-left:4px;">SELLER</span></div>
+  <input class="search" placeholder="Search products, orders...">
+  <div class="seller-tag"><div class="avatar">🙂</div> TECH HOUSE</div>
+</div>
+<div class="nav">
+  <a class="navlink active" href="dashboard.html">Dashboard</a>
+  <a class="navlink" href="products.html">Products</a>
+  <a class="navlink" href="orders.html">Orders</a>
+  <a class="navlink" href="chat.html">Chat</a>
+  <a class="navlink" href="store.html">Store</a>
+  <a class="navlink" href="analytics.html">Analytics</a>
+  <a class="navlink" href="wallet.html">Wallet</a>
+</div>
+
+<main>
+<section class="page active" id="dashboard">
+<h1>Seller Dashboard</h1>
+    <div class="stat-row">
+      <div class="card stat"><div class="icon">📦</div><div class="label">สินค้า</div><div class="value">24</div></div>
+      <div class="card stat"><div class="icon">🧾</div><div class="label">คำสั่งซื้อ</div><div class="value">245</div></div>
+      <div class="card stat revenue"><div class="icon">💰</div><div class="label">รายได้</div><div class="value">฿125,450</div></div>
+    </div>
+    <div class="card">
+      <div class="section-title">Recent Orders</div>
+      <table>
+        <tr><th>#id</th><th>ชื่อสินค้า</th><th>ราคาสินค้า</th></tr>
+        <tr><td>10291</td><td>RTX 5070 Gaming GPU</td><td>฿29,900</td></tr>
+        <tr><td>10290</td><td>RAM DDR5 16GB/6000MHz ×2</td><td>฿7,800</td></tr>
+        <tr><td>10289</td><td>Ryzen 7 7800X3D</td><td>฿12,900</td></tr>
+      </table>
+    </div>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

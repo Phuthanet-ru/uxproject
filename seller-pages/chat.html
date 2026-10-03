@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechMart Seller — Chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">Tech<span>Mart</span><span style="font-size:10px;color:#6b86b8;font-weight:600;margin-left:4px;">SELLER</span></div>
+  <input class="search" placeholder="Search products, orders...">
+  <div class="seller-tag"><div class="avatar">🙂</div> TECH HOUSE</div>
+</div>
+<div class="nav">
+  <a class="navlink" href="dashboard.html">Dashboard</a>
+  <a class="navlink" href="products.html">Products</a>
+  <a class="navlink" href="orders.html">Orders</a>
+  <a class="navlink active" href="chat.html">Chat</a>
+  <a class="navlink" href="store.html">Store</a>
+  <a class="navlink" href="analytics.html">Analytics</a>
+  <a class="navlink" href="wallet.html">Wallet</a>
+</div>
+
+<main>
+<section class="page active" id="chat">
+<h1>Seller Chat</h1>
+    <div class="card chat-layout">
+      <div class="chat-list">
+        <div class="person active">John Doe</div>
+        <div class="person">Mike</div>
+        <div class="person">Tony</div>
+      </div>
+      <div class="chat-window">
+        <div class="chat-header">John Doe</div>
+        <div class="chat-body">No messages yet.</div>
+        <div class="chat-input"><input placeholder="Type message..."><button class="btn-primary">➤</button></div>
+      </div>
+    </div>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

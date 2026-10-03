@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechMart Seller — Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">Tech<span>Mart</span><span style="font-size:10px;color:#6b86b8;font-weight:600;margin-left:4px;">SELLER</span></div>
+  <input class="search" placeholder="Search products, orders...">
+  <div class="seller-tag"><div class="avatar">🙂</div> TECH HOUSE</div>
+</div>
+<div class="nav">
+  <a class="navlink" href="dashboard.html">Dashboard</a>
+  <a class="navlink" href="products.html">Products</a>
+  <a class="navlink" href="orders.html">Orders</a>
+  <a class="navlink" href="chat.html">Chat</a>
+  <a class="navlink active" href="store.html">Store</a>
+  <a class="navlink" href="analytics.html">Analytics</a>
+  <a class="navlink" href="wallet.html">Wallet</a>
+</div>
+
+<main>
+<section class="page active" id="store">
+<h1>Seller Store</h1>
+    <div class="card">
+      <div class="store-cover">STORE COVER</div>
+      <div class="store-head">
+        <h2>TECH HOUSE</h2>
+        <div class="subtle">★ 4.9 · 128 Sales &nbsp; <button class="btn-primary" style="padding:6px 14px;">Follow</button> <button class="btn-ghost" style="padding:6px 14px;">Contact</button></div>
+      </div>
+      <div class="store-tabs"><span class="active">Products</span><span>Reviews</span><span>About</span></div>
+      <div class="store-body">
+        <div class="store-cats">GPU<br>CPU<br>RAM<br>Keyboard</div>
+        <div class="prod-grid">
+          <div class="prod-tile"><div class="ph"></div>RTX 5070<div class="price">฿29,900</div></div>
+          <div class="prod-tile"><div class="ph"></div>RTX 4060<div class="price">฿32,900</div></div>
+          <div class="prod-tile"><div class="ph"></div>Ryzen 7<div class="price">฿12,900</div></div>
+          <div class="prod-tile"><div class="ph"></div>RAM DDR5<div class="price">฿3,900</div></div>
+        </div>
+      </div>
+    </div>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
