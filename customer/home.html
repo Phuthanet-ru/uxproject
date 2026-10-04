@@ -3,105 +3,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Shop</title>
-    <link rel="stylesheet" href="..\cus-css\cus-style.css">
+    <title>Blue Theme Store</title>
 
-    
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .top {
+            background-color: #030d1a;
+            height: 25px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0a192f;
+            padding: 12px 5%;
+        }
+
+        .header a.logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .header ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .header ul li a {
+            color: #e6f1ff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .header form {
+            display: flex;
+            border: 1px solid #1e3a8a;
+        }
+
+        .header input {
+            width: 220px;
+            padding: 8px 12px;
+            border: none;
+            outline: none;
+            background-color: #112240;
+            color: white;
+            border-radius: 0;
+        }
+
+        .header input::placeholder {
+            color: #8892b0;
+        }
+
+        .header button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #1f3143;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        .Account a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            background-color: #1e3a8a;
+            padding: 8px 16px;
+            border-radius: 0;
+        }
+
+        /* Banner */
+        .body-ad {
+            text-align: center;
+            background-color: #030d1a;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .body-ad img {
+            width: 85%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+        /* หมวดหมู่สินค้า */
+        .shop-cate {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f0f4f8;
+        }
+
+        .shop-cate h1 {
+            font-size: 24px;
+            color: #0a192f;
+            margin-bottom: 25px;
+        }
+
+        .shop-cate ul {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .shop-cate ul li a {
+            text-decoration: none;
+            color: #0a192f;
+            font-weight: 600;
+            display: block;
+            background-color: white;
+            padding: 15px 25px;
+            border-radius: 0;
+            border: 1px solid #cbd5e1;
+        }
+
+        .shop-cate ul li a img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        /* สินค้าโปรโมชั่น */
+        .content {
+            text-align: center;
+            padding: 30px 15px 10px;
+            background-color: #f0f4f8;
+        }
+
+        .content h1 {
+            font-size: 24px;
+            color: #0a192f;
+        }
+
+        .com-set {
+            padding: 20px 8% 40px;
+            background: #e2e8f0;
+        }
+
+        .product {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .set1 {
+            width: 30%;
+            min-width: 260px;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0;
+            margin-bottom: 25px;
+            border: 1px solid #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .set1 img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .set1 a {
+            text-decoration: none;
+            color: #1e293b;
+        }
+
+        .set1 p {
+            margin-top: 12px;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .set1 p:last-child {
+            font-size: 22px;
+            font-weight: bold;
+            color: #0284c7;
+            margin-top: 10px;
+        }
+
+        .more {
+            display: inline-block;
+            text-align: center;
+            margin: 20px auto 0;
+            padding: 10px 30px;
+            color: #0066cc;
+            background-color: white;
+            border: 2px solid #0066cc;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .more-container {
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a192f;
+            color: #e6f1ff;
+            padding: 50px 10% 20px;
+            border-top: 4px solid #0066cc;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 8px;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .footer-section p, .footer-section ul li a {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 40px;
+            border-top: 1px solid #1e293b;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+    </style>
+
 </head>
-
 <body>
     <div class="top"></div>
 
     <div class="header">
-        <a href="">LOGO</a>
-
+        <a href="#" class="logo">TECH STORE</a>
         <ul>
-            <li><a href="">หน้าหลัก</a></li>
-            <li><a href="">ร้านค้า</a></li>
-            <li><a href="">หมวดหมู่</a></li>
-            <li><a href="">ดูแลลูกค้า</a></li>
+            <li><a href="#">หน้าหลัก</a></li>
+            <li><a href="#">ร้านค้า</a></li>
+            <li><a href="#">หมวดหมู่</a></li>
+            <li><a href="#">ดูแลลูกค้า</a></li>
         </ul>
-
         <form action="" method="get">
-            <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า">
-            <button type="submit">ค้นหา</button>
+            <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า...">
+            <button type="submit">Search</button>
         </form>
-
         <div class="Account">
-            <a href="">เข้าสู่ระบบ</a>
+            <a href="#">Login</a>
         </div>
     </div>
 
+    <!-- Banner โฆษณา -->
     <div class="body-ad">
-        <img src="..\image\desktop4.png" alt="Advertisement">
+        <img src="../image/desktop4.png" alt="Banner Ad">
     </div>
 
+    <!-- 1. หมวดหมู่สินค้า -->
     <div class="shop-cate">
-        <h1>ซื้อตามหมวดหมู่สินค้า</h1>
+        <h1>หมวดหมู่สินค้า</h1>
         <ul>
             <li>
-                <a href=""><img src="..\image\gpu.png" alt=""></a>
-                <p>Graphics Card</p>
+                <a href="#">
+                    <img src="../image/cpu.png" alt="CPU">
+                    <p>CPU</p>
+                </a>
             </li>
             <li>
-                <a href=""><img src="..\image\cpu.png" alt=""></a>
-                <p>CPU</p>
+                <a href="#">
+                    <img src="../image/gpu.png" alt="GPU">
+                    <p>VGA</p>
+                </a>
             </li>
             <li>
-                <a href=""><img src="..\image\mtboard.png" alt=""></a>
-                <p>Motherboard</p>
+                <a href="#">
+                    <img src="../image/mtboard.png" alt="Mainboard">
+                    <p>Mainboard</p>
+                </a>
             </li>
             <li>
-                <a href=""><img src="..\image\monitor.png" alt=""></a>
-                <p>Monitor</p>
+                <a href="#">
+                    <img src="../image/monitor.png" alt="Monitor">
+                    <p>Monitor</p>
+                </a>
             </li>
         </ul>
     </div>
 
+    <!-- 2. สินค้าโปรโมชั่น (4 แถว) -->
     <div class="content">
-        <h1>สินค้าโปรโมชั่น</h1>
+        <h1>สินค้าโปรโมชั่นพิเศษ</h1>
     </div>
 
     <div class="com-set">
         <div class="product">
-
+            <!-- แถวที่ 1 -->
             <div class="set1">
-                <a href="">
-                    <img src="..\image\desktop1.png" alt="Computer Set">
-                    <p>Ryzen 5 5600 / RTX 4060 / RAM 16GB / SSD 1TB</p>
-                    <p>฿24,990</p>
+                <a href="#">
+                    <img src="../image/desktop1.png" alt="Desktop Set 1">
+                    <p>คอมพิวเตอร์เซ็ต Gaming Set 1</p>
+                    <p>25,900 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/desktop2.png" alt="Desktop Set 2">
+                    <p>คอมพิวเตอร์เซ็ต Gaming Set 2</p>
+                    <p>28,500 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/desktop3.png" alt="Desktop Set 3">
+                    <p>คอมพิวเตอร์เซ็ต Gaming Set 3</p>
+                    <p>31,900 ฿</p>
                 </a>
             </div>
 
+            <!-- แถวที่ 2 -->
             <div class="set1">
-                <a href="">
-                    <img src="..\image\desktop2.png" alt="Computer Set">
-                    <p>Ryzen 5 5600 / RTX 4060 / RAM 16GB / SSD 1TB</p>
-                    <p>฿24,990</p>
+                <a href="#">
+                    <img src="../image/desktop4.png" alt="Desktop Set 4">
+                    <p>คอมพิวเตอร์เซ็ต Gaming Set 4</p>
+                    <p>35,900 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/desktop5.png" alt="Desktop Set 5">
+                    <p>คอมพิวเตอร์เซ็ต Gaming Set 5</p>
+                    <p>39,900 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/desktop1.png" alt="Desktop Set 6">
+                    <p>คอมพิวเตอร์เซ็ต Workstation 1</p>
+                    <p>42,900 ฿</p>
                 </a>
             </div>
 
+            <!-- แถวที่ 3 -->
             <div class="set1">
-                <a href="">
-                    <img src="..\image\desktop2.png" alt="Computer Set">
-                    <p>Ryzen 5 5600 / RTX 4060 / RAM 16GB / SSD 1TB</p>
-                    <p>฿24,990</p>
+                <a href="#">
+                    <img src="../image/desktop2.png" alt="Desktop Set 7">
+                    <p>คอมพิวเตอร์เซ็ต Workstation 2</p>
+                    <p>45,500 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/desktop3.png" alt="Desktop Set 8">
+                    <p>คอมพิวเตอร์เซ็ต Extreme Set 1</p>
+                    <p>49,900 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/desktop4.png" alt="Desktop Set 9">
+                    <p>คอมพิวเตอร์เซ็ต Extreme Set 2</p>
+                    <p>53,900 ฿</p>
                 </a>
             </div>
 
+            <!-- แถวที่ 4 -->
             <div class="set1">
-                <a href="">
-                    <img src="..\image\desktop1.png" alt="Computer Set">
-                    <p>Ryzen 5 5600 / RTX 4060 / RAM 16GB / SSD 1TB</p>
-                    <p>฿24,990</p>
+                <a href="#">
+                    <img src="../image/desktop5.png" alt="Desktop Set 10">
+                    <p>คอมพิวเตอร์เซ็ต Ultimate Set 1</p>
+                    <p>59,900 ฿</p>
                 </a>
             </div>
-
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/desktop1.png" alt="Desktop Set 11">
+                    <p>คอมพิวเตอร์เซ็ต Ultimate Set 2</p>
+                    <p>65,900 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/desktop2.png" alt="Desktop Set 12">
+                    <p>คอมพิวเตอร์เซ็ต Custom Pro</p>
+                    <p>72,900 ฿</p>
+                </a>
+            </div>
         </div>
-
-        <a href="" class="more">เพิ่มเติม</a>
+        <div class="more-container">
+            <a href="#" class="more">ดูสินค้าทั้งหมด</a>
+        </div>
     </div>
 
-
+    <!-- 3. Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>เกี่ยวกับเรา</h3>
+                <p>ศูนย์รวมอุปกรณ์คอมพิวเตอร์ จัดสเปกคอม ประกอบคอมพิวเตอร์ระดับมืออาชีพ พร้อมบริการจัดส่งทั่วประเทศ</p>
+            </div>
+            <div class="footer-section">
+                <h3>ช่วยเหลือ & บริการ</h3>
+                <ul>
+                    <li><a href="#">วิธีชำระเงิน</a></li>
+                    <li><a href="#">การจัดส่งสินค้า</a></li>
+                    <li><a href="#">การรับประกันสินค้า</a></li>
+                    <li><a href="#">นโยบายการคืนสินค้า</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ติดต่อเรา</h3>
+                <p>Email: contact@techstore.com</p>
+                <p>Tel: 02-123-4567</p>
+                <p>เวลาทำการ: จันทร์ - ศุกร์ 09:00 - 18:00 น.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TECH STORE. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
