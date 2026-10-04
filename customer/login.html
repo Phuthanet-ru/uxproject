@@ -202,6 +202,7 @@
 
         /* Buttons */
         .btn-login {
+            display: block;
             width: 100%;
             padding: 0;
             background-color: #0066cc;
@@ -210,8 +211,7 @@
             border-radius: 0;
         }
 
-        .btn-login a {
-            display: block;
+        .btn-login p {
             width: 100%;
             padding: 12px;
             color: white;
@@ -397,19 +397,19 @@
     <div class="top"></div>
 
     <div class="header">
-        <a href="..\customer\home.html" class="logo">TECH STORE</a>
+        <a href="../customer/index.html" class="logo">TECH STORE</a>
         <ul>
-            <li><a href="..\customer\home.html">หน้าหลัก</a></li>
-            <li><a href="..\customer\shop.html">ร้านค้า</a></li>
-            <li><a href="..\customer\categories.html">หมวดหมู่</a></li>
-            <li><a href="..\customer\customercare.html">ดูแลลูกค้า</a></li>
+            <li><a href="../customer/index.html">หน้าหลัก</a></li>
+            <li><a href="../customer/shop.html">ร้านค้า</a></li>
+            <li><a href="../customer/categories.html">หมวดหมู่</a></li>
+            <li><a href="../customer/customercare.html">ดูแลลูกค้า</a></li>
         </ul>
-        <form action="..\customer\filter.html" method="get">
+        <form action="../customer/filter.html" method="get">
             <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า...">
             <button type="submit">Search</button>
         </form>
         <div class="Account">
-            <a href="..\customer\login.html">Login</a>
+            <a href="../customer/login.html">Login</a>
         </div>
     </div>
 
@@ -426,7 +426,7 @@
                 <h2>เข้าสู่ระบบ</h2>
             </div>
 
-            <form action="" method="post">
+            <form method="post">
                 <div class="form-group">
                     <label for="email">อีเมล / ชื่อผู้ใช้งาน</label>
                     <input type="text" id="email" name="email" placeholder="" required>
@@ -445,7 +445,7 @@
                     <a href="#" class="forgot-pass">ลืมรหัสผ่าน?</a>
                 </div>
 
-                <button type="submit" class="btn-login"><a href="..\customer\homesignin.html">เข้าสู่ระบบ</a></button>
+                <a href="../customer/homesignin.html" class="btn-login"><p>เข้าสู่ระบบ</p> </a>
             </form>
 
             <div class="divider">
@@ -458,10 +458,10 @@
             </div>
 
             <div class="register-link-box">
-                ยังไม่มีบัญชีสมาชิก? <a href="..\customer\signup.html">สมัครสมาชิกที่นี่</a>
+                ยังไม่มีบัญชีสมาชิก? <a href="../customer/signup.html">สมัครสมาชิกที่นี่</a>
             </div>
             <div class="staffhere">
-                <a href="..\seller-pages\dashboard.html">พนักงานกดที่นี่</a>
+                <a href="../seller-pages/dashboard.html">พนักงานกดที่นี่</a>
             </div>
 
         </div>
@@ -471,7 +471,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>เกี่ยวกับเรา</h3>
+                <h2>เกี่ยวกับเรา</h2>
                 <p>ศูนย์รวมอุปกรณ์คอมพิวเตอร์ จัดสเปกคอม ประกอบคอมพิวเตอร์ระดับมืออาชีพ พร้อมบริการจัดส่งทั่วประเทศ</p>
             </div>
             <div class="footer-section">
