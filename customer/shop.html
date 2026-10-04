@@ -23,6 +23,7 @@
             justify-content: space-between;
             background-color: #0a192f;
             padding: 12px 5%;
+            gap: 15px;
         }
 
         .header a.logo {
@@ -81,6 +82,7 @@
             background-color: #1e3a8a;
             padding: 8px 16px;
             border-radius: 0;
+            display: inline-block;
         }
 
         .page-banner {
@@ -323,6 +325,83 @@
             border-top: 1px solid #1e293b;
             font-size: 13px;
             color: #64748b;
+        }
+
+        /* Responsive Breakpoint for Mobile (< 768px) */
+        @media screen and (max-width: 767px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                padding: 15px 5%;
+            }
+
+            .header ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header form {
+                width: 100%;
+            }
+
+            .header input {
+                flex: 1;
+                width: auto;
+            }
+
+            .page-banner {
+                padding: 20px 5%;
+                text-align: center;
+            }
+
+            .shop-container {
+                flex-direction: column;
+                padding: 20px 4%;
+                gap: 20px;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .shop-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .shop-toolbar select {
+                width: 100%;
+            }
+
+            .product-grid {
+                gap: 10px;
+            }
+
+            .set1 {
+                width: calc(50% - 5px);
+                min-width: unset;
+                padding: 12px;
+            }
+
+            .set1 img {
+                height: 130px;
+            }
+
+            .set1 p {
+                font-size: 13px;
+            }
+
+            .set1 p:last-child {
+                font-size: 16px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 25px;
+            }
         }
     </style>
 </head>

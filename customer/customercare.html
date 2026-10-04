@@ -18,6 +18,10 @@
             height: 25px;
         }
 
+        /* =========================================================
+           Desktop First Styles (หน้าจอคอมพิวเตอร์ >= 768px)
+        ========================================================= */
+
         /* Header */
         .header {
             display: flex;
@@ -296,6 +300,79 @@
             border-top: 1px solid #1e293b;
             font-size: 13px;
             color: #64748b;
+        }
+
+        /* =========================================================
+           Mobile Styles (หน้าจอมือถือ < 768px)
+        ========================================================= */
+        @media screen and (max-width: 767.98px) {
+            /* Header */
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .header ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .header form {
+                width: 100%;
+            }
+
+            .header input {
+                width: 100%;
+            }
+
+            .Account {
+                width: 100%;
+            }
+
+            .Account a {
+                display: block;
+                width: 100%;
+            }
+
+            /* Main Settings Layout */
+            .settings-container {
+                flex-direction: column;
+                padding: 20px 15px;
+                gap: 20px;
+            }
+
+            /* Sidebar Menu */
+            .settings-menu {
+                width: 100%;
+            }
+
+            /* Content Panel */
+            .settings-content {
+                padding: 20px 15px;
+            }
+
+            /* Form Elements */
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn-action {
+                width: 100%;
+            }
+
+            /* Footer */
+            footer {
+                padding: 30px 20px 20px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 25px;
+            }
         }
     </style>
 </head>

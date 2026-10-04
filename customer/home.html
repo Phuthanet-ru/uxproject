@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Theme Store</title>
+    <title>TECH STORE - Blue Theme Store</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -19,13 +18,16 @@
             height: 25px;
         }
 
-        /* Header */
+        /* Header Baseline */
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             background-color: #0a192f;
             padding: 12px 5%;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .header a.logo {
@@ -36,16 +38,32 @@
             letter-spacing: 1px;
         }
 
+        /* Hamburger Toggle Button (Hidden on Desktop) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
         .header ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
         }
 
         .header ul li a {
             color: #e6f1ff;
             text-decoration: none;
             font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .header ul li a:hover {
+            color: #38bdf8;
         }
 
         .header form {
@@ -54,7 +72,7 @@
         }
 
         .header input {
-            width: 220px;
+            width: 200px;
             padding: 8px 12px;
             border: none;
             outline: none;
@@ -84,6 +102,7 @@
             background-color: #1e3a8a;
             padding: 8px 16px;
             border-radius: 0;
+            display: inline-block;
         }
 
         /* Banner */
@@ -118,9 +137,15 @@
         .shop-cate ul {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 20px;
             list-style: none;
             flex-wrap: wrap;
+        }
+
+        .shop-cate ul li {
+            flex: 1;
+            min-width: 140px;
+            max-width: 200px;
         }
 
         .shop-cate ul li a {
@@ -129,14 +154,20 @@
             font-weight: 600;
             display: block;
             background-color: white;
-            padding: 15px 25px;
+            padding: 15px 10px;
             border-radius: 0;
             border: 1px solid #cbd5e1;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .shop-cate ul li a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .shop-cate ul li a img {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             object-fit: contain;
             display: block;
             margin: 0 auto 10px;
@@ -161,15 +192,14 @@
 
         .product {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 20px;
             flex-wrap: wrap;
         }
 
-        /* ปรับความกว้างเป็น 22% เพื่อให้จุได้ 4 คอลัมน์ต่อแถว */
+        /* Desktop Column: 4 Columns */
         .set1 {
-            width: 22%;
-            min-width: 220px;
+            width: calc(25% - 15px);
             background-color: white;
             padding: 18px;
             text-align: center;
@@ -199,10 +229,14 @@
         }
 
         .set1 p:last-child {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             color: #0284c7;
             margin-top: 10px;
+        }
+
+        .more-container {
+            text-align: center;
         }
 
         .more {
@@ -216,10 +250,12 @@
             border-radius: 0;
             text-decoration: none;
             font-weight: bold;
+            transition: background 0.2s, color 0.2s;
         }
 
-        .more-container {
-            text-align: center;
+        .more:hover {
+            background-color: #0066cc;
+            color: white;
         }
 
         /* Footer */
@@ -271,25 +307,153 @@
             color: #64748b;
         }
 
-    </style>
+        /* =========================================================
+           RESPONSIVE MEDIA QUERIES
+           ========================================================= */
 
+        /* Tablet (768px - 1023px) */
+        @media screen and (max-width: 1023px) {
+            .set1 {
+                width: calc(33.333% - 14px); /* 3 คอลัมน์ */
+            }
+
+            .header input {
+                width: 160px;
+            }
+        }
+
+        /* Mobile (< 768px) */
+        @media screen and (max-width: 767px) {
+            .header {
+                padding: 12px 4%;
+            }
+
+            .menu-toggle {
+                display: block; /* แสดงปุ่ม Hamburger Menu */
+            }
+
+            /* สลับ Navigation เป็น Dropdown Vertical Menu */
+            .header ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                background-color: #112240;
+                order: 4;
+                margin-top: 10px;
+                border-top: 1px solid #1e3a8a;
+            }
+
+            .header ul.active {
+                display: flex;
+            }
+
+            .header ul li {
+                width: 100%;
+            }
+
+            .header ul li a {
+                display: block;
+                padding: 12px 16px;
+                border-bottom: 1px solid #1e3a8a;
+            }
+
+            .header form {
+                width: 100%;
+                order: 3;
+                margin-top: 8px;
+            }
+
+            .header input {
+                flex: 1;
+                width: auto;
+            }
+
+            .Account {
+                order: 2;
+            }
+
+            .body-ad img {
+                width: 95%;
+                max-height: 250px;
+            }
+
+            .shop-cate {
+                padding: 25px 15px;
+            }
+
+            .shop-cate ul {
+                gap: 10px;
+            }
+
+            .shop-cate ul li {
+                min-width: 130px;
+                width: calc(50% - 5px); /* 2 หมวดหมู่ต่อแถว */
+                max-width: none;
+            }
+
+            .com-set {
+                padding: 15px 3% 30px;
+            }
+
+            .product {
+                gap: 10px;
+            }
+
+            .set1 {
+                width: calc(50% - 5px); /* 2 คอลัมน์ต่อแถวบนมือถือ */
+                padding: 12px 8px;
+                margin-bottom: 10px;
+            }
+
+            .set1 img {
+                height: 120px;
+            }
+
+            .set1 p {
+                font-size: 13px;
+            }
+
+            .set1 p:last-child {
+                font-size: 16px;
+            }
+
+            footer {
+                padding: 30px 5% 20px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .footer-section {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="top"></div>
 
     <div class="header">
         <a href="..\customer\home.html" class="logo">TECH STORE</a>
-        <ul>
+        
+        <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">☰</button>
+
+        <ul id="navMenu">
             <li><a href="..\customer\home.html">หน้าหลัก</a></li>
             <li><a href="..\customer\shop.html">ร้านค้า</a></li>
             <li><a href="..\customer\categories.html">หมวดหมู่</a></li>
             <li><a href="..\customer\customercare.html">ดูแลลูกค้า</a></li>
             <li><a href="..\customer\promotion.html">โปรโมชั่น</a></li>
         </ul>
+
         <form action="..\customer\filter.html" method="get">
             <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า...">
             <button type="submit">Search</button>
         </form>
+
         <div class="Account">
             <a href="..\customer\login.html">Login</a>
         </div>
@@ -331,14 +495,14 @@
         </ul>
     </div>
 
-    <!-- 2. สินค้าโปรโมชั่น (4 คอลัมน์ x 4 แถว = 16 ชิ้น) -->
+    <!-- 2. สินค้าโปรโมชั่น (4 คอลัมน์ Desktop / 2 คอลัมน์ Mobile) -->
     <div class="content">
         <h1>สินค้าโปรโมชั่นพิเศษ</h1>
     </div>
 
     <div class="com-set">
         <div class="product">
-            <!-- แถวที่ 1 -->
+            <!-- สินค้ารายการที่ 1 - 16 -->
             <div class="set1">
                 <a href="#">
                     <img src="../image/desktop1.png" alt="Desktop Set 1">
@@ -368,7 +532,6 @@
                 </a>
             </div>
 
-            <!-- แถวที่ 2 -->
             <div class="set1">
                 <a href="#">
                     <img src="../image/desktop5.png" alt="Desktop Set 5">
@@ -398,7 +561,6 @@
                 </a>
             </div>
 
-            <!-- แถวที่ 3 -->
             <div class="set1">
                 <a href="#">
                     <img src="../image/desktop4.png" alt="Desktop Set 9">
@@ -428,7 +590,6 @@
                 </a>
             </div>
 
-            <!-- แถวที่ 4 -->
             <div class="set1">
                 <a href="#">
                     <img src="../image/desktop3.png" alt="Desktop Set 13">
@@ -490,5 +651,12 @@
             <p>&copy; 2026 TECH STORE. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navMenu");
+            menu.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
