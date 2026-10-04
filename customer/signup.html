@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - TECH STORE</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .top {
+            background-color: #030d1a;
+            height: 25px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0a192f;
+            padding: 12px 5%;
+        }
+
+        .header a.logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .header ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .header ul li a {
+            color: #e6f1ff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .header form {
+            display: flex;
+            border: 1px solid #1e3a8a;
+        }
+
+        .header input {
+            width: 220px;
+            padding: 8px 12px;
+            border: none;
+            outline: none;
+            background-color: #112240;
+            color: white;
+            border-radius: 0;
+        }
+
+        .header input::placeholder {
+            color: #8892b0;
+        }
+
+        .header button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #1f3143;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        .Account a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            background-color: #1e3a8a;
+            padding: 8px 16px;
+            border-radius: 0;
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background-color: #0a192f;
+            color: white;
+            padding: 30px 5%;
+            border-top: 1px solid #1e293b;
+            border-bottom: 3px solid #0066cc;
+        }
+
+        .page-banner h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .page-banner p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Split Layout Container */
+        .split-container {
+            display: flex;
+            gap: 40px;
+            padding: 40px 5%;
+            background-color: #e2e8f0;
+            min-height: 80vh;
+            align-items: stretch;
+        }
+
+        /* Left Side Form Card */
+        .signup-card-left {
+            width: 480px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 35px;
+            border-radius: 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .signup-card-header {
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #0066cc;
+        }
+
+        .signup-card-header h2 {
+            font-size: 22px;
+            color: #0a192f;
+        }
+
+        .signup-card-header p {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        /* Form Inputs */
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #1e293b;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            outline: none;
+            font-size: 14px;
+            background-color: #f8fafc;
+            border-radius: 0;
+            color: #0f172a;
+        }
+
+        .form-group input:focus {
+            border-color: #0066cc;
+            background-color: #ffffff;
+        }
+
+        /* Checkbox Terms */
+        .terms-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.4;
+        }
+
+        .terms-group input {
+            accent-color: #0066cc;
+            margin-top: 2px;
+        }
+
+        .terms-group a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Buttons */
+        .btn-signup a{
+            width: 100%;
+            padding: 12px;
+            background-color: #0066cc;
+            color: rgb(251, 251, 251);
+            border: none;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+            text-decoration: none;
+        }
+
+        .login-link-box {
+            text-align: center;
+            font-size: 14px;
+            color: #64748b;
+            padding-top: 18px;
+            margin-top: 18px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .login-link-box a {
+            color: #0066cc;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Right Side Banner Box with desktop4.png */
+        .image-banner-right {
+            flex: 1;
+            background-color: #0a192f;
+            border: 1px solid #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-banner-right img {
+            width: 100%;
+            height: 100%;
+            max-height: 550px;
+            object-fit: contain;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a192f;
+            color: #e6f1ff;
+            padding: 50px 10% 20px;
+            border-top: 4px solid #0066cc;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 8px;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .footer-section p, .footer-section ul li a {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 40px;
+            border-top: 1px solid #1e293b;
+            font-size: 13px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top"></div>
+
+    <div class="header">
+        <a href="..\customer\home.html" class="logo">TECH STORE</a>
+        <ul>
+            <li><a href="..\customer\home.html">หน้าหลัก</a></li>
+            <li><a href="..\customer\shop.html">ร้านค้า</a></li>
+            <li><a href="..\customer\categories.html">หมวดหมู่</a></li>
+            <li><a href="..\customer\customercare.html">ดูแลลูกค้า</a></li>
+        </ul>
+        <form action="..\customer\filter.html" method="get">
+            <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="Account">
+            <a href="..\customer\login.html">Login</a>
+        </div>
+    </div>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <h1>ลงทะเบียนสมาชิกใหม่</h1>
+        <p></p>
+    </div>
+
+    <!-- Split Main Container -->
+    <div class="split-container">
+
+        <!-- Left Form Card -->
+        <div class="signup-card-left">
+
+            <div class="signup-card-header">
+                <h2>สมัครสมาชิก</h2>
+                <p></p>
+            </div>
+
+            <form action="" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstname">ชื่อจริง</label>
+                        <input type="text" id="firstname" name="firstname" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">นามสกุล</label>
+                        <input type="text" id="lastname" name="lastname" placeholder="" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">อีเมล (Email)</label>
+                    <input type="email" id="email" name="email" placeholder="" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">เบอร์โทรศัพท์</label>
+                    <input type="tel" id="phone" name="phone" placeholder="" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <input type="password" id="password" name="password" placeholder="ก" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">ยืนยันรหัสผ่าน</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="" required>
+                </div>
+
+                <div class="terms-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">ฉันยอมรับ </label>
+                </div>
+
+                <button type="submit" class="btn-signup"><a href="..\customer\home.html">ลงทะเบียนสมาชิก</a></button>
+            </form>
+
+            <div class="login-link-box">
+                มีบัญชีสมาชิกอยู่แล้ว? <a href="..\customer\login.html">เข้าสู่ระบบที่นี่</a>
+            </div>
+
+        </div>
+
+        <!-- Right Side Desktop Banner Image -->
+        <div class="image-banner-right">
+            <img src="../image/desktop4.png" alt="Desktop Banner">
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>เกี่ยวกับเรา</h3>
+                <p>ศูนย์รวมอุปกรณ์คอมพิวเตอร์ จัดสเปกคอม ประกอบคอมพิวเตอร์ระดับมืออาชีพ พร้อมบริการจัดส่งทั่วประเทศ</p>
+            </div>
+            <div class="footer-section">
+                <h3>ช่วยเหลือ & บริการ</h3>
+                <ul>
+                    <li><a href="#">วิธีชำระเงิน</a></li>
+                    <li><a href="#">การจัดส่งสินค้า</a></li>
+                    <li><a href="#">การรับประกันสินค้า</a></li>
+                    <li><a href="#">นโยบายการคืนสินค้า</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ติดต่อเรา</h3>
+                <p>Email: contact@techstore.com</p>
+                <p>Tel: 02-123-4567</p>
+                <p>เวลาทำการ: จันทร์ - ศุกร์ 09:00 - 18:00 น.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TECH STORE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

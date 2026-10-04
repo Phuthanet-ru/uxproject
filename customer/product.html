@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - TECH STORE</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .top {
+            background-color: #030d1a;
+            height: 25px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0a192f;
+            padding: 12px 5%;
+        }
+
+        .header a.logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .header ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .header ul li a {
+            color: #e6f1ff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .header form {
+            display: flex;
+            border: 1px solid #1e3a8a;
+        }
+
+        .header input {
+            width: 220px;
+            padding: 8px 12px;
+            border: none;
+            outline: none;
+            background-color: #112240;
+            color: white;
+            border-radius: 0;
+        }
+
+        .header input::placeholder {
+            color: #8892b0;
+        }
+
+        .header button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #1f3143;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        .Account a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            background-color: #1e3a8a;
+            padding: 8px 16px;
+            border-radius: 0;
+        }
+
+        /* Breadcrumb Bar */
+        .breadcrumb {
+            background-color: #0a192f;
+            padding: 15px 5%;
+            color: #94a3b8;
+            font-size: 13px;
+            border-top: 1px solid #1e293b;
+            border-bottom: 2px solid #0066cc;
+        }
+
+        .breadcrumb a {
+            color: #e6f1ff;
+            text-decoration: none;
+        }
+
+        /* Product Detail Layout */
+        .product-detail-container {
+            padding: 40px 5%;
+            background-color: #e2e8f0;
+            min-height: 80vh;
+        }
+
+        .product-main-box {
+            display: flex;
+            gap: 40px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 35px;
+            margin-bottom: 40px;
+            border-radius: 0;
+        }
+
+        /* Left Image Area */
+        .product-gallery {
+            width: 450px;
+            text-align: center;
+        }
+
+        .main-image-box {
+            width: 100%;
+            height: 380px;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .main-image-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .thumbnail-list {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .thumbnail-item {
+            width: 70px;
+            height: 70px;
+            border: 1px solid #cbd5e1;
+            padding: 5px;
+            cursor: pointer;
+            background-color: #ffffff;
+        }
+
+        .thumbnail-item.active {
+            border: 2px solid #0066cc;
+        }
+
+        .thumbnail-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Right Info Area */
+        .product-info-panel {
+            flex: 1;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background-color: #1e3a8a;
+            color: #ffffff;
+            font-size: 12px;
+            padding: 4px 10px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            color: #0a192f;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .product-price-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .current-price {
+            font-size: 30px;
+            font-weight: bold;
+            color: #0284c7;
+        }
+
+        .original-price {
+            font-size: 16px;
+            color: #94a3b8;
+            text-decoration: line-through;
+        }
+
+        .stock-status {
+            font-size: 14px;
+            color: #16a34a;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .product-description-short {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* Action Buttons & Quantity */
+        .purchase-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .quantity-box {
+            display: flex;
+            border: 1px solid #cbd5e1;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 42px;
+            background-color: #f1f5f9;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0a192f;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 42px;
+            border: none;
+            border-left: 1px solid #cbd5e1;
+            border-right: 1px solid #cbd5e1;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            outline: none;
+            border-radius: 0;
+        }
+
+        .btn-add-cart {
+            padding: 0 25px;
+            height: 42px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        .btn-buy-now {
+            padding: 0 25px;
+            height: 42px;
+            background-color: #0a192f;
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        /* Specifications Table Box */
+        .spec-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .spec-box h2 {
+            font-size: 20px;
+            color: #0a192f;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0066cc;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .spec-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .spec-table td {
+            padding: 12px 15px;
+            font-size: 14px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .spec-table td.spec-title {
+            width: 220px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        .spec-table td.spec-value {
+            color: #475569;
+        }
+
+        /* Related Products Grid */
+        .section-title {
+            font-size: 20px;
+            color: #0a192f;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0066cc;
+            display: inline-block;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .set1 {
+            width: calc(25% - 15px);
+            min-width: 200px;
+            background-color: white;
+            padding: 18px;
+            text-align: center;
+            border-radius: 0;
+            border: 1px solid #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .set1 img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .set1 a {
+            text-decoration: none;
+            color: #1e293b;
+        }
+
+        .set1 p {
+            margin-top: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .set1 p:last-child {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0284c7;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a192f;
+            color: #e6f1ff;
+            padding: 50px 10% 20px;
+            border-top: 4px solid #0066cc;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 8px;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .footer-section p, .footer-section ul li a {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 40px;
+            border-top: 1px solid #1e293b;
+            font-size: 13px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top"></div>
+
+    <div class="header">
+        <a href="..\customer\home.html" class="logo">TECH STORE</a>
+        <ul>
+            <li><a href="..\customer\home.html">หน้าหลัก</a></li>
+            <li><a href="..\customer\shop.html">ร้านค้า</a></li>
+            <li><a href="..\customer\categories.html">หมวดหมู่</a></li>
+            <li><a href="..\customer\customercare.html">ดูแลลูกค้า</a></li>
+        </ul>
+        <form action="..\customer\filter.html" method="get">
+            <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="Account">
+            <a href="..\customer\customercare.html">บัญชี</a>
+        </div>
+    </div>
+
+    <!-- Breadcrumb Nav -->
+    <div class="breadcrumb">
+        <a href="#">หน้าหลัก</a> / <a href="#">VGA (การ์ดจอ)</a> / <span>ASUS Dual GeForce RTX 4060 8GB GDDR6</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="product-detail-container">
+
+        <!-- Product Overview Block -->
+        <div class="product-main-box">
+
+            <!-- Gallery -->
+            <div class="product-gallery">
+                <div class="main-image-box">
+                    <img src="../image/gpu.png" alt="ASUS Dual GeForce RTX 4060">
+                </div>
+                <div class="thumbnail-list">
+                    <div class="thumbnail-item active">
+                        <img src="../image/gpu.png" alt="Thumb 1">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="../image/gpu.png" alt="Thumb 2">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="../image/gpu.png" alt="Thumb 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info-panel">
+                <span class="product-tag">VGA CARD / GRAPHICS CARD</span>
+                <h1 class="product-title">ASUS Dual GeForce RTX 4060 8GB GDDR6</h1>
+
+                <div class="product-price-box">
+                    <span class="current-price">฿11,990</span>
+           
+                </div>
+
+             
+
+                <div class="product-description-short">
+                    การ์ดจอ ASUS Dual GeForce RTX 4060 8GB GDDR6 รวมประสิทธิภาพการระบายความร้อนที่ไดนามิกเข้ากับความเข้ากันได้ที่กว้างขวาง โซลูชันการระบายความร้อนขั้นสูงจากการ์ดจอระดับเรือธง รวมถึงพัดลม Axial-tech สองตัวเพื่อเพิ่มการไหลเวียนของอากาศไปยังฮีตซิงก์
+                </div>
+
+                <!-- Purchase Section -->
+                <div class="purchase-controls">
+                    <div class="quantity-box">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" value="1" class="quantity-input" readonly>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <button class="btn-add-cart">เพิ่มลงตะกร้า</button>
+                    <button class="btn-buy-now">ซื้อทันที</button>
+                </div>
+
+                <p style="font-size: 13px; color: #64748b;">* รับประกันศูนย์ไทย 3 ปีเต็ม (3 Years Warranty)</p>
+            </div>
+
+        </div>
+
+        <!-- Full Specifications Table -->
+        <div class="spec-box">
+            <h2>รายละเอียดคุณสมบัติ (Specifications)</h2>
+            <table class="spec-table">
+                <tr>
+                    <td class="spec-title">GPU Model</td>
+                    <td class="spec-value">NVIDIA GeForce RTX 4060</td>
+                </tr>
+                <tr>
+                    <td class="spec-title">Bus Standard</td>
+                    <td class="spec-value">PCI Express 4.0</td>
+                </tr>
+                <tr>
+                    <td class="spec-title">Video Memory</td>
+                    <td class="spec-value">8GB GDDR6</td>
+                </tr>
+                <tr>
+                    <td class="spec-title">Engine Clock</td>
+                    <td class="spec-value">OC Mode: 2535 MHz / Default Mode: 2505 MHz</td>
+                </tr>
+                <tr>
+                    <td class="spec-title">CUDA Core</td>
+                    <td class="spec-value">3072 Units</td>
+                </tr>
+                <tr>
+                    <td class="spec-title">Memory Speed</td>
+                    <td class="spec-value">17 Gbps</td>
+                </tr>
+                <tr>
+                    <td class="spec-title">Memory Interface</td>
+                    <td class="spec-value">128-bit</td>
+                </tr>
+                <tr>
+                    <td class="spec-title">Output Ports</td>
+                    <td class="spec-value">1x HDMI 2.1a, 3x DisplayPort 1.4a</td>
+                </tr>
+                <tr>
+                    <td class="spec-title">Recommended PSU</td>
+                    <td class="spec-value">550W</td>
+                </tr>
+                <tr>
+                    <td class="spec-title">Power Connectors</td>
+                    <td class="spec-value">1 x 8-pin</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Related Products -->
+        <h2 class="section-title">สินค้าที่เกี่ยวข้อง</h2>
+        <div class="product-grid">
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/cpu.png" alt="CPU">
+                    <p>AMD Ryzen 5 5600</p>
+                    <p>4,290 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/mtboard.png" alt="Mainboard">
+                    <p>MSI MAG B550 TOMAHAWK</p>
+                    <p>5,490 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/monitor.png" alt="Monitor">
+                    <p>ASUS Gaming Monitor 24" 165Hz</p>
+                    <p>7,990 ฿</p>
+                </a>
+            </div>
+            <div class="set1">
+                <a href="#">
+                    <img src="../image/desktop1.png" alt="Desktop Set">
+                    <p>คอมพิวเตอร์เซ็ต Gaming Set 1</p>
+                    <p>25,900 ฿</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>เกี่ยวกับเรา</h3>
+                <p>ศูนย์รวมอุปกรณ์คอมพิวเตอร์ จัดสเปกคอม ประกอบคอมพิวเตอร์ระดับมืออาชีพ พร้อมบริการจัดส่งทั่วประเทศ</p>
+            </div>
+            <div class="footer-section">
+                <h3>ช่วยเหลือ & บริการ</h3>
+                <ul>
+                    <li><a href="#">วิธีชำระเงิน</a></li>
+                    <li><a href="#">การจัดส่งสินค้า</a></li>
+                    <li><a href="#">การรับประกันสินค้า</a></li>
+                    <li><a href="#">นโยบายการคืนสินค้า</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ติดต่อเรา</h3>
+                <p>Email: contact@techstore.com</p>
+                <p>Tel: 02-123-4567</p>
+                <p>เวลาทำการ: จันทร์ - ศุกร์ 09:00 - 18:00 น.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TECH STORE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

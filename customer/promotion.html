@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions & Hot Deals - TECH STORE</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .top {
+            background-color: #030d1a;
+            height: 25px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0a192f;
+            padding: 12px 5%;
+        }
+
+        .header a.logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .header ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .header ul li a {
+            color: #e6f1ff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .header form {
+            display: flex;
+            border: 1px solid #1e3a8a;
+        }
+
+        .header input {
+            width: 220px;
+            padding: 8px 12px;
+            border: none;
+            outline: none;
+            background-color: #112240;
+            color: white;
+            border-radius: 0;
+        }
+
+        .header input::placeholder {
+            color: #8892b0;
+        }
+
+        .header button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #1f3143;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        .Account a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            background-color: #1e3a8a;
+            padding: 8px 16px;
+            border-radius: 0;
+        }
+
+        /* Page Banner Header */
+        .promo-banner {
+            background-color: #0a192f;
+            color: white;
+            padding: 40px 5%;
+            border-top: 1px solid #1e293b;
+            border-bottom: 3px solid #0066cc;
+            text-align: center;
+        }
+
+        .promo-banner h1 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .promo-banner p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        /* Flash Sale Countdown Bar */
+        .countdown-bar {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .countdown-title {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .timer-boxes {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .time-box {
+            background-color: #0a192f;
+            color: #0284c7;
+            padding: 6px 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: 1px solid #0066cc;
+        }
+
+        /* Main Content Container */
+        .promo-container {
+            padding: 40px 5%;
+            background-color: #e2e8f0;
+            min-height: 80vh;
+        }
+
+        .section-title-box {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 10px;
+        }
+
+        .section-title-box h2 {
+            font-size: 20px;
+            color: #0a192f;
+        }
+
+        /* Product Grid Layout */
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Discount Badge */
+        .badge-discount {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: #0066cc;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 0;
+            z-index: 10;
+        }
+
+        .product-image-box {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            padding-top: 10px;
+        }
+
+        .product-image-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-category {
+            font-size: 11px;
+            color: #0066cc;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 14px;
+            color: #1e293b;
+            text-decoration: none;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            display: block;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .price-container {
+            margin-bottom: 15px;
+        }
+
+        .original-price {
+            font-size: 13px;
+            color: #94a3b8;
+            text-decoration: line-through;
+            margin-bottom: 2px;
+        }
+
+        .sale-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0284c7;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            padding: 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a192f;
+            color: #e6f1ff;
+            padding: 50px 10% 20px;
+            border-top: 4px solid #0066cc;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 8px;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .footer-section p, .footer-section ul li a {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 40px;
+            border-top: 1px solid #1e293b;
+            font-size: 13px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top"></div>
+
+    <div class="header">
+        <a href="..\customer\home.html" class="logo">TECH STORE</a>
+        <ul>
+            <li><a href="..\customer\home.html">หน้าหลัก</a></li>
+            <li><a href="..\customer\shop.html">ร้านค้า</a></li>
+            <li><a href="..\customer\categories.html">หมวดหมู่</a></li>
+            <li><a href="..\customer\customercare.html">ดูแลลูกค้า</a></li>
+        </ul>
+        <form action="..\customer\filter.html" method="get">
+            <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="Account">
+            <a href="..\customer\customercare.html">บัญชี</a>
+        </div>
+    </div>
+
+    <!-- Page Banner -->
+    <div class="promo-banner">
+        <h1>PROMOTIONS & HOT DEALS</h1>
+        <p>รวมสินค้าคอมพิวเตอร์และอุปกรณ์ไอทีลดราคาพิเศษ ประจำเดือนนี้</p>
+    </div>
+
+    <!-- Countdown Bar -->
+    <div class="countdown-bar">
+        <div class="countdown-title">FLASH SALE DEALS - เวลาคงเหลือของข้อเสนอพิเศษ</div>
+        <div class="timer-boxes">
+            <div class="time-box">12</div> :
+            <div class="time-box">45</div> :
+            <div class="time-box">08</div>
+        </div>
+    </div>
+
+    <!-- Main Promotion Area -->
+    <div class="promo-container">
+
+        <div class="section-title-box">
+            <h2>สินค้าลดราคาพิเศษประจำสัปดาห์ (Special Offers)</h2>
+        </div>
+
+        <div class="promo-grid">
+
+            <!-- Card 1 -->
+            <div class="product-card">
+                <span class="badge-discount">-20%</span>
+                <div>
+                    <div class="product-image-box">
+                        <img src="../image/gpu.png" alt="Graphics Card">
+                    </div>
+                    <span class="product-category">VGA CARD</span>
+                    <a href="#" class="product-title">ASUS Dual GeForce RTX 4060 8GB GDDR6</a>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <div class="original-price">14,900 ฿</div>
+                        <div class="sale-price">11,920 ฿</div>
+                    </div>
+                    <button class="btn-add-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card">
+                <span class="badge-discount">-15%</span>
+                <div>
+                    <div class="product-image-box">
+                        <img src="../image/cpu.png" alt="Processor">
+                    </div>
+                    <span class="product-category">PROCESSOR</span>
+                    <a href="#" class="product-title">Intel Core i7-14700K 3.4GHz 20-Cores</a>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <div class="original-price">16,500 ฿</div>
+                        <div class="sale-price">14,025 ฿</div>
+                    </div>
+                    <button class="btn-add-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card">
+                <span class="badge-discount">-25%</span>
+                <div>
+                    <div class="product-image-box">
+                        <img src="../image/monitor.png" alt="Gaming Monitor">
+                    </div>
+                    <span class="product-category">MONITOR</span>
+                    <a href="#" class="product-title">Gaming Monitor 27" IPS 165Hz FHD 1ms</a>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <div class="original-price">7,900 ฿</div>
+                        <div class="sale-price">5,925 ฿</div>
+                    </div>
+                    <button class="btn-add-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card">
+                <span class="badge-discount">-10%</span>
+                <div>
+                    <div class="product-image-box">
+                        <img src="../image/mtboard.png" alt="Motherboard">
+                    </div>
+                    <span class="product-category">MOTHERBOARD</span>
+                    <a href="#" class="product-title">MSI MAG B760 TOMAHAWK WIFI DDR5</a>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <div class="original-price">7,200 ฿</div>
+                        <div class="sale-price">6,480 ฿</div>
+                    </div>
+                    <button class="btn-add-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="product-card">
+                <span class="badge-discount">-18%</span>
+                <div>
+                    <div class="product-image-box">
+                        <img src="../image/desktop1.png" alt="Desktop Set">
+                    </div>
+                    <span class="product-category">DESKTOP SET</span>
+                    <a href="#" class="product-title">TECH Set Intel i5 + RTX 4060 Gaming PC</a>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <div class="original-price">32,900 ฿</div>
+                        <div class="sale-price">26,978 ฿</div>
+                    </div>
+                    <button class="btn-add-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="product-card">
+                <span class="badge-discount">-30%</span>
+                <div>
+                    <div class="product-image-box">
+                        <img src="../image/desktop3.png" alt="High End Desktop">
+                    </div>
+                    <span class="product-category">DESKTOP SET</span>
+                    <a href="#" class="product-title">TECH Ultra Set Ryzen 7 + RTX 4070 Ti SUPER</a>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <div class="original-price">59,900 ฿</div>
+                        <div class="sale-price">41,930 ฿</div>
+                    </div>
+                    <button class="btn-add-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="product-card">
+                <span class="badge-discount">-12%</span>
+                <div>
+                    <div class="product-image-box">
+                        <img src="../image/desktop2.png" alt="Gaming Set">
+                    </div>
+                    <span class="product-category">DESKTOP SET</span>
+                    <a href="#" class="product-title">TECH Workstation Set Intel i9 64GB DDR5</a>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <div class="original-price">65,000 ฿</div>
+                        <div class="sale-price">57,200 ฿</div>
+                    </div>
+                    <button class="btn-add-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="product-card">
+                <span class="badge-discount">-22%</span>
+                <div>
+                    <div class="product-image-box">
+                        <img src="../image/desktop5.png" alt="Desktop Gaming">
+                    </div>
+                    <span class="product-category">DESKTOP SET</span>
+                    <a href="#" class="product-title">TECH Compact Gaming i5 + RTX 3060 12GB</a>
+                </div>
+                <div>
+                    <div class="price-container">
+                        <div class="original-price">25,900 ฿</div>
+                        <div class="sale-price">20,202 ฿</div>
+                    </div>
+                    <button class="btn-add-cart">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>เกี่ยวกับเรา</h3>
+                <p>ศูนย์รวมอุปกรณ์คอมพิวเตอร์ จัดสเปกคอม ประกอบคอมพิวเตอร์ระดับมืออาชีพ พร้อมบริการจัดส่งทั่วประเทศ</p>
+            </div>
+            <div class="footer-section">
+                <h3>ช่วยเหลือ & บริการ</h3>
+                <ul>
+                    <li><a href="#">วิธีชำระเงิน</a></li>
+                    <li><a href="#">การจัดส่งสินค้า</a></li>
+                    <li><a href="#">การรับประกันสินค้า</a></li>
+                    <li><a href="#">นโยบายการคืนสินค้า</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ติดต่อเรา</h3>
+                <p>Email: contact@techstore.com</p>
+                <p>Tel: 02-123-4567</p>
+                <p>เวลาทำการ: จันทร์ - ศุกร์ 09:00 - 18:00 น.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TECH STORE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

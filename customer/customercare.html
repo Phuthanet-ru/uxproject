@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Care Settings - TECH STORE</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .top {
+            background-color: #030d1a;
+            height: 25px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0a192f;
+            padding: 12px 5%;
+        }
+
+        .header a.logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .header ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .header ul li a {
+            color: #e6f1ff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .header form {
+            display: flex;
+            border: 1px solid #1e3a8a;
+        }
+
+        .header input {
+            width: 220px;
+            padding: 8px 12px;
+            border: none;
+            outline: none;
+            background-color: #112240;
+            color: white;
+            border-radius: 0;
+        }
+
+        .header input::placeholder {
+            color: #8892b0;
+        }
+
+        .header button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #1f3143;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        .Account a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            background-color: #1e3a8a;
+            padding: 8px 16px;
+            border-radius: 0;
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background-color: #0a192f;
+            color: white;
+            padding: 30px 5%;
+            border-top: 1px solid #1e293b;
+            border-bottom: 3px solid #0066cc;
+        }
+
+        .page-banner h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .page-banner p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Settings Layout */
+        .settings-container {
+            display: flex;
+            gap: 30px;
+            padding: 40px 5%;
+            background-color: #e2e8f0;
+            min-height: 80vh;
+        }
+
+        /* Left Settings Sidebar Menu */
+        .settings-menu {
+            width: 280px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            align-self: flex-start;
+        }
+
+        .settings-menu-title {
+            background-color: #0a192f;
+            color: white;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 2px solid #0066cc;
+        }
+
+        .settings-menu ul {
+            list-style: none;
+        }
+
+        .settings-menu ul li a {
+            display: block;
+            padding: 14px 20px;
+            color: #334155;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .settings-menu ul li a.active {
+            background-color: #0066cc;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Right Content Panel */
+        .settings-content {
+            flex: 1;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 35px;
+        }
+
+        .content-header {
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #0066cc;
+        }
+
+        .content-header h2 {
+            font-size: 22px;
+            color: #0a192f;
+        }
+
+        .content-header p {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        /* Topic Section Blocks */
+        .setting-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .setting-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .setting-section h3 {
+            font-size: 17px;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .setting-section p, 
+        .setting-section ul li {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .setting-section ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        /* Form Inputs for Contact/Account */
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #1e293b;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            outline: none;
+            font-size: 14px;
+            background-color: #f8fafc;
+            border-radius: 0;
+        }
+
+        .btn-action {
+            padding: 10px 24px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a192f;
+            color: #e6f1ff;
+            padding: 50px 10% 20px;
+            border-top: 4px solid #0066cc;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 8px;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .footer-section p, .footer-section ul li a {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 40px;
+            border-top: 1px solid #1e293b;
+            font-size: 13px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top"></div>
+
+    <div class="header">
+        <a href="..\customer\home.html" class="logo">TECH STORE</a>
+        <ul>
+            <li><a href="..\customer\home.html">หน้าหลัก</a></li>
+            <li><a href="..\customer\shop.html">ร้านค้า</a></li>
+            <li><a href="..\customer\categories.html">หมวดหมู่</a></li>
+            <li><a href="..\customer\customercare.html">ดูแลลูกค้า</a></li>
+        </ul>
+        <form action="..\customer\filter.html" method="get">
+            <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="Account">
+            <a href="..\customer\customercare.html">บัญชี</a>
+        </div>
+    </div>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <h1>Help Center & Settings</h1>
+        <p>ศูนย์รวมข้อมูล นโยบายการบริการ และการจัดการบัญชีผู้ใช้</p>
+    </div>
+
+    <!-- Main Settings Container -->
+    <div class="settings-container">
+
+        <!-- Sidebar Menu -->
+        <div class="settings-menu">
+            <div class="settings-menu-title">หมวดหมู่ศูนย์ช่วยเหลือ</div>
+            <ul>
+                <li><a href="#" class="active">1. Shipping & Deliveries (การจัดส่ง)</a></li>
+                <li><a href="#">2. Account Settings (จัดการบัญชี)</a></li>
+                <li><a href="#">3. Store Policy (นโยบายร้านค้า)</a></li>
+                <li><a href="#">4. Warranty & Claims (ประกันและเคลม)</a></li>
+                <li><a href="#">5. Payment Methods (การชำระเงิน)</a></li>
+                <li><a href="#">6. Contact Support (ติดต่อเจ้าหน้าที่)</a></li>
+            </ul>
+        </div>
+
+        <!-- Content Panel -->
+        <div class="settings-content">
+
+            <!-- 1. Shipping & Deliveries Section -->
+            <div class="content-header">
+                <h2>Shipping & Deliveries</h2>
+                <p>รายละเอียดเงื่อนไขการจัดส่งสินค้า ระยะเวลา และการติดตามพัสดุ</p>
+            </div>
+
+            <div class="setting-section">
+                <h3>1.1 ระยะเวลาในการจัดส่งสินค้า</h3>
+                <p>ทางร้านจัดส่งสินค้าผ่านขนส่งเอกชนชั้นนำ โดยมีระยะเวลาจัดส่งดังนี้:</p>
+                <ul>
+                    <li><strong>กรุงเทพฯ และปริมณฑล:</strong> จัดส่งภายใน 1 - 2 วันทำการ</li>
+                    <li><strong>ต่างจังหวัด:</strong> จัดส่งภายใน 2 - 3 วันทำการ</li>
+                    <li><strong>บริการ Express (เฉพาะกรุงเทพฯ):</strong> จัดส่งด่วนภายใน 3 ชั่วโมง</li>
+                </ul>
+            </div>
+
+            <div class="setting-section">
+                <h3>1.2 ค่าบริการจัดส่ง</h3>
+                <p>สั่งซื้อสินค้าครบ 3,000 บาท ขึ้นไป <strong>บริการจัดส่งฟรีทั่วประเทศ</strong> (กรณีสั่งซื้อไม่ถึงคิดค่าจัดส่งตามจริง เริ่มต้น 50 บาท)</p>
+            </div>
+
+            <div class="setting-section">
+                <h3>1.3 การติดตามสถานะพัสดุ (Tracking Order)</h3>
+                <p>เมื่อสินค้าถูกจัดส่งเรียบร้อยแล้ว ระบบจะส่งหมายเลข Tracking Number ให้ทางอีเมล หรือสามารถเช็คสถานะได้ที่เมนู <strong>Account > My Orders</strong></p>
+            </div>
+
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #cbd5e1;">
+
+            <!-- 2. Quick Inquiry Form Inside Settings -->
+            <div class="content-header">
+                <h2>ส่งคำถามเพิ่มเติมเกี่ยวกับหัวข้อนี้</h2>
+                <p>หากต้องการสอบถามรายละเอียดการจัดส่งเพิ่มเติม กรอกข้อมูลด้านล่างได้ทันที</p>
+            </div>
+
+            <form action="" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="order-id">หมายเลขคำสั่งซื้อ (ถ้ามี)</label>
+                        <input type="text" id="order-id" placeholder="เช่น #TS-88492">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">อีเมลติดต่อกลับ</label>
+                        <input type="email" id="contact-email" placeholder="example@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="details">รายละเอียดที่ต้องการสอบถาม</label>
+                    <textarea id="details" rows="4" placeholder="กรอกข้อความที่นี่..."></textarea>
+                </div>
+                <button type="submit" class="btn-action">ส่งข้อความสอบถาม</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>เกี่ยวกับเรา</h3>
+                <p>ศูนย์รวมอุปกรณ์คอมพิวเตอร์ จัดสเปกคอม ประกอบคอมพิวเตอร์ระดับมืออาชีพ พร้อมบริการจัดส่งทั่วประเทศ</p>
+            </div>
+            <div class="footer-section">
+                <h3>ช่วยเหลือ & บริการ</h3>
+                <ul>
+                    <li><a href="#">วิธีชำระเงิน</a></li>
+                    <li><a href="#">การจัดส่งสินค้า</a></li>
+                    <li><a href="#">การรับประกันสินค้า</a></li>
+                    <li><a href="#">นโยบายการคืนสินค้า</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ติดต่อเรา</h3>
+                <p>Email: contact@techstore.com</p>
+                <p>Tel: 02-123-4567</p>
+                <p>เวลาทำการ: จันทร์ - ศุกร์ 09:00 - 18:00 น.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TECH STORE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

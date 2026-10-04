@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\cus-css\shop.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .top {
+            background-color: #030d1a;
+            height: 25px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0a192f;
+            padding: 12px 5%;
+        }
+
+        .header a.logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .header ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .header ul li a {
+            color: #e6f1ff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .header form {
+            display: flex;
+            border: 1px solid #1e3a8a;
+        }
+
+        .header input {
+            width: 220px;
+            padding: 8px 12px;
+            border: none;
+            outline: none;
+            background-color: #112240;
+            color: white;
+            border-radius: 0;
+        }
+
+        .header input::placeholder {
+            color: #8892b0;
+        }
+
+        .header button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #1f3143;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0;
+        }
+
+        .Account a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            background-color: #1e3a8a;
+            padding: 8px 16px;
+            border-radius: 0;
+        }
+
+        /* Page Title Banner */
+        .page-banner {
+            background-color: #0a192f;
+            color: white;
+            padding: 30px 5%;
+            border-top: 1px solid #1e293b;
+            border-bottom: 3px solid #0066cc;
+        }
+
+        .page-banner h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .page-banner p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Shop Main Layout */
+        .shop-container {
+            display: flex;
+            gap: 30px;
+            padding: 40px 5%;
+            background-color: #e2e8f0;
+            min-height: 80vh;
+        }
+
+        /* Sidebar Filter */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            align-self: flex-start;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            color: #0a192f;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0066cc;
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+        }
+
+        .filter-group h3 {
+            font-size: 15px;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .filter-group ul {
+            list-style: none;
+        }
+
+        .filter-group ul li {
+            margin-bottom: 10px;
+        }
+
+        .filter-group ul li label {
+            font-size: 14px;
+            color: #475569;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-group input[type="checkbox"],
+        .filter-group input[type="radio"] {
+            accent-color: #0066cc;
+        }
+
+        .price-input {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .price-input input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #cbd5e1;
+            outline: none;
+            font-size: 13px;
+        }
+
+        .btn-filter {
+            width: 100%;
+            padding: 8px;
+            background-color: #0a192f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        /* Shop Products Section */
+        .shop-main {
+            flex: 1;
+        }
+
+        .shop-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 12px 20px;
+            border: 1px solid #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .shop-toolbar p {
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .shop-toolbar select {
+            padding: 6px 12px;
+            border: 1px solid #cbd5e1;
+            outline: none;
+            font-size: 14px;
+            color: #1e293b;
+            background-color: white;
+        }
+
+        /* Product Grid (4 Columns) */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .set1 {
+            width: calc(25% - 15px);
+            min-width: 200px;
+            background-color: white;
+            padding: 18px;
+            text-align: center;
+            border-radius: 0;
+            border: 1px solid #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .set1 img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .set1 a {
+            text-decoration: none;
+            color: #1e293b;
+        }
+
+        .set1 p {
+            margin-top: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .set1 p:last-child {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0284c7;
+            margin-top: 10px;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 30px;
+        }
+
+        .pagination a {
+            padding: 8px 14px;
+            background-color: #ffffff;
+            color: #0a192f;
+            border: 1px solid #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .pagination a.active {
+            background-color: #0066cc;
+            color: white;
+            border-color: #0066cc;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a192f;
+            color: #e6f1ff;
+            padding: 50px 10% 20px;
+            border-top: 4px solid #0066cc;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 8px;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .footer-section p, .footer-section ul li a {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 40px;
+            border-top: 1px solid #1e293b;
+            font-size: 13px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top"></div>
+
+    <div class="header">
+        <a href="..\customer\home.html" class="logo">TECH STORE</a>
+        <ul>
+            <li><a href="..\customer\home.html">หน้าหลัก</a></li>
+            <li><a href="..\customer\shop.html">ร้านค้า</a></li>
+            <li><a href="..\customer\categories.html">หมวดหมู่</a></li>
+            <li><a href="..\customer\customercare.html">ดูแลลูกค้า</a></li>
+        </ul>
+        <form action="..\customer\filter.html" method="get">
+            <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="Account">
+            <a href="..\customer\login.html">Login</a>
+        </div>
+    </div>
+
+    <!-- Banner ชื่อหน้า -->
+    <div class="page-banner">
+        <h1>สินค้า</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="shop-container">
+
+        <!-- Sidebar Filter ด้านซ้าย -->
+        <div class="sidebar">
+            <h2>ตัวกรองสินค้า</h2>
+
+            <div class="filter-group">
+                <h3>หมวดหมู่</h3>
+                <ul>
+                    <li><label><input type="checkbox" checked> คอมพิวเตอร์เซ็ต</label></li>
+                    <li><label><input type="checkbox"> CPU (ซีพียู)</label></li>
+                    <li><label><input type="checkbox"> VGA (การ์ดจอ)</label></li>
+                    <li><label><input type="checkbox"> Mainboard (เมนบอร์ด)</label></li>
+                    <li><label><input type="checkbox"> Monitor (จอมอนิเตอร์)</label></li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h3>ช่วงราคา (บาท)</h3>
+                <div class="price-input">
+                    <input type="number" placeholder="ต่ำสุด">
+                    <span>-</span>
+                    <input type="number" placeholder="สูงสุด">
+                </div>
+                <button class="btn-filter">กรองราคา</button>
+            </div>
+        </div>
+
+        <!-- รายการสินค้าด้านขวา -->
+        <div class="shop-main">
+
+            <!-- Toolbar จัดเรียง -->
+            <div class="shop-toolbar">
+                <p>แสดงผล 1–8 จาก 16 สินค้า</p>
+                <select name="sort">
+                    <option value="popular">เรียงตามความนิยม</option>
+                    <option value="price-low">ราคา: ต่ำไปสูง</option>
+                    <option value="price-high">ราคา: สูงไปต่ำ</option>
+                    <option value="newest">สินค้าใหม่ล่าสุด</option>
+                </select>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <div class="set1">
+                    <a href="#">
+                        <img src="../image/desktop1.png" alt="Desktop Set 1">
+                        <p>คอมพิวเตอร์เซ็ต Gaming Set 1</p>
+                        <p>25,900 ฿</p>
+                    </a>
+                </div>
+                <div class="set1">
+                    <a href="#">
+                        <img src="../image/desktop2.png" alt="Desktop Set 2">
+                        <p>คอมพิวเตอร์เซ็ต Gaming Set 2</p>
+                        <p>28,500 ฿</p>
+                    </a>
+                </div>
+                <div class="set1">
+                    <a href="#">
+                        <img src="../image/desktop3.png" alt="Desktop Set 3">
+                        <p>คอมพิวเตอร์เซ็ต Gaming Set 3</p>
+                        <p>31,900 ฿</p>
+                    </a>
+                </div>
+                <div class="set1">
+                    <a href="#">
+                        <img src="../image/desktop4.png" alt="Desktop Set 4">
+                        <p>คอมพิวเตอร์เซ็ต Gaming Set 4</p>
+                        <p>33,900 ฿</p>
+                    </a>
+                </div>
+
+                <div class="set1">
+                    <a href="#">
+                        <img src="../image/gpu.png" alt="GPU">
+                        <p>ASUS Dual GeForce RTX 4060 8GB</p>
+                        <p>11,990 ฿</p>
+                    </a>
+                </div>
+                <div class="set1">
+                    <a href="#">
+                        <img src="../image/monitor.png" alt="Monitor">
+                        <p>ASUS Gaming Monitor 24" 165Hz</p>
+                        <p>7,990 ฿</p>
+                    </a>
+                </div>
+                <div class="set1">
+                    <a href="#">
+                        <img src="../image/cpu.png" alt="CPU">
+                        <p>AMD Ryzen 5 5600 6-Core 12-Thread</p>
+                        <p>4,290 ฿</p>
+                    </a>
+                </div>
+                <div class="set1">
+                    <a href="#">
+                        <img src="../image/mtboard.png" alt="Mainboard">
+                        <p>MSI MAG B550 TOMAHAWK</p>
+                        <p>5,490 ฿</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Page Number Navigation -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">></a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>เกี่ยวกับเรา</h3>
+                <p>ศูนย์รวมอุปกรณ์คอมพิวเตอร์ จัดสเปกคอม ประกอบคอมพิวเตอร์ระดับมืออาชีพ พร้อมบริการจัดส่งทั่วประเทศ</p>
+            </div>
+            <div class="footer-section">
+                <h3>ช่วยเหลือ & บริการ</h3>
+                <ul>
+                    <li><a href="#">วิธีชำระเงิน</a></li>
+                    <li><a href="#">การจัดส่งสินค้า</a></li>
+                    <li><a href="#">การรับประกันสินค้า</a></li>
+                    <li><a href="#">นโยบายการคืนสินค้า</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ติดต่อเรา</h3>
+                <p>Email: contact@techstore.com</p>
+                <p>Tel: 02-123-4567</p>
+                <p>เวลาทำการ: จันทร์ - ศุกร์ 09:00 - 18:00 น.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TECH STORE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
