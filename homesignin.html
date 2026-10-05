@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TECH STORE - Blue Theme Store</title>
+    <title>Blue Theme Store</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -18,15 +19,13 @@
             height: 25px;
         }
 
-        /* Header Baseline */
+        /* Header */
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             background-color: #0a192f;
             padding: 12px 5%;
-            position: relative;
-            flex-wrap: wrap;
             gap: 15px;
         }
 
@@ -38,32 +37,16 @@
             letter-spacing: 1px;
         }
 
-        /* Hamburger Toggle Button (Hidden on Desktop) */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #ffffff;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
         .header ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 30px;
         }
 
         .header ul li a {
             color: #e6f1ff;
             text-decoration: none;
             font-size: 15px;
-            transition: color 0.2s;
-        }
-
-        .header ul li a:hover {
-            color: #38bdf8;
         }
 
         .header form {
@@ -72,7 +55,7 @@
         }
 
         .header input {
-            width: 200px;
+            width: 220px;
             padding: 8px 12px;
             border: none;
             outline: none;
@@ -137,15 +120,9 @@
         .shop-cate ul {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 40px;
             list-style: none;
             flex-wrap: wrap;
-        }
-
-        .shop-cate ul li {
-            flex: 1;
-            min-width: 140px;
-            max-width: 200px;
         }
 
         .shop-cate ul li a {
@@ -154,20 +131,14 @@
             font-weight: 600;
             display: block;
             background-color: white;
-            padding: 15px 10px;
+            padding: 15px 25px;
             border-radius: 0;
             border: 1px solid #cbd5e1;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .shop-cate ul li a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .shop-cate ul li a img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             object-fit: contain;
             display: block;
             margin: 0 auto 10px;
@@ -192,14 +163,15 @@
 
         .product {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
 
-        /* Desktop Column: 4 Columns */
+        /* ปรับความกว้างเป็น 22% เพื่อให้จุได้ 4 คอลัมน์ต่อแถว */
         .set1 {
-            width: calc(25% - 15px);
+            width: 22%;
+            min-width: 220px;
             background-color: white;
             padding: 18px;
             text-align: center;
@@ -229,14 +201,10 @@
         }
 
         .set1 p:last-child {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: #0284c7;
             margin-top: 10px;
-        }
-
-        .more-container {
-            text-align: center;
         }
 
         .more {
@@ -250,12 +218,10 @@
             border-radius: 0;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.2s, color 0.2s;
         }
 
-        .more:hover {
-            background-color: #0066cc;
-            color: white;
+        .more-container {
+            text-align: center;
         }
 
         /* Footer */
@@ -307,61 +273,23 @@
             color: #64748b;
         }
 
-        /* =========================================================
-           RESPONSIVE MEDIA QUERIES
-           ========================================================= */
-
-        /* Tablet (768px - 1023px) */
-        @media screen and (max-width: 1023px) {
-            .set1 {
-                width: calc(33.333% - 14px); /* 3 คอลัมน์ */
-            }
-
-            .header input {
-                width: 160px;
-            }
-        }
-
-        /* Mobile (< 768px) */
+        /* Responsive Breakpoint for Mobile (< 768px) */
         @media screen and (max-width: 767px) {
             .header {
-                padding: 12px 4%;
-            }
-
-            .menu-toggle {
-                display: block; /* แสดงปุ่ม Hamburger Menu */
-            }
-
-            /* สลับ Navigation เป็น Dropdown Vertical Menu */
-            .header ul {
-                display: none;
-                width: 100%;
                 flex-direction: column;
-                gap: 0;
-                background-color: #112240;
-                order: 4;
-                margin-top: 10px;
-                border-top: 1px solid #1e3a8a;
+                align-items: center;
+                gap: 12px;
+                padding: 15px 5%;
             }
 
-            .header ul.active {
-                display: flex;
-            }
-
-            .header ul li {
-                width: 100%;
-            }
-
-            .header ul li a {
-                display: block;
-                padding: 12px 16px;
-                border-bottom: 1px solid #1e3a8a;
+            .header ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .header form {
                 width: 100%;
-                order: 3;
-                margin-top: 8px;
             }
 
             .header input {
@@ -369,17 +297,18 @@
                 width: auto;
             }
 
-            .Account {
-                order: 2;
-            }
-
             .body-ad img {
                 width: 95%;
-                max-height: 250px;
+                max-height: 220px;
             }
 
             .shop-cate {
                 padding: 25px 15px;
+            }
+
+            .shop-cate h1 {
+                font-size: 20px;
+                margin-bottom: 15px;
             }
 
             .shop-cate ul {
@@ -387,9 +316,20 @@
             }
 
             .shop-cate ul li {
-                min-width: 130px;
-                width: calc(50% - 5px); /* 2 หมวดหมู่ต่อแถว */
-                max-width: none;
+                width: 47%;
+            }
+
+            .shop-cate ul li a {
+                padding: 12px 10px;
+            }
+
+            .shop-cate ul li a img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .content h1 {
+                font-size: 20px;
             }
 
             .com-set {
@@ -401,8 +341,9 @@
             }
 
             .set1 {
-                width: calc(50% - 5px); /* 2 คอลัมน์ต่อแถวบนมือถือ */
-                padding: 12px 8px;
+                width: 47%;
+                min-width: unset;
+                padding: 10px;
                 margin-bottom: 10px;
             }
 
@@ -411,57 +352,52 @@
             }
 
             .set1 p {
-                font-size: 13px;
+                font-size: 12px;
+                margin-top: 6px;
             }
 
             .set1 p:last-child {
                 font-size: 16px;
+                margin-top: 6px;
             }
 
-            footer {
-                padding: 30px 5% 20px;
+            .more {
+                padding: 8px 20px;
+                font-size: 14px;
             }
 
             .footer-container {
                 flex-direction: column;
                 gap: 25px;
             }
-
-            .footer-section {
-                width: 100%;
-            }
         }
+
     </style>
+
 </head>
 <body>
     <div class="top"></div>
 
     <div class="header">
-        <a href="../customer/index.html" class="logo">TECH STORE</a>
-        
-        <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">☰</button>
-
-        <ul id="navMenu">
-            <li><a href="../customer/index.html">หน้าหลัก</a></li>
-            <li><a href="../customer/shop.html">ร้านค้า</a></li>
-            <li><a href="../customer/categories.html">หมวดหมู่</a></li>
-            <li><a href="../customer/customercare.html">ดูแลลูกค้า</a></li>
-            <li><a href="../customer/promotion.html">โปรโมชั่น</a></li>
+        <a href="index.html" class="logo">TECH STORE</a>
+        <ul>
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="shop.html">ร้านค้า</a></li>
+            <li><a href="categories.html">หมวดหมู่</a></li>
+            <li><a href="customercare.html">ดูแลลูกค้า</a></li>
         </ul>
-
-        <form action="../customer/filter.html" method="get">
+        <form action="filter.html" method="get">
             <input type="text" name="search" id="search" placeholder="ค้นหาสินค้า...">
             <button type="submit">Search</button>
         </form>
-
         <div class="Account">
-            <a href="../customer/login.html">Login</a>
+            <a href="customercare.html">บัญชี</a>
         </div>
     </div>
 
     <!-- Banner โฆษณา -->
     <div class="body-ad">
-        <img src="../image/desktop4.png" alt="Banner Ad">
+        <img src="image/desktop4.png" alt="Banner Ad">
     </div>
 
     <!-- 1. หมวดหมู่สินค้า -->
@@ -470,150 +406,153 @@
         <ul>
             <li>
                 <a href="#">
-                    <img src="../image/cpu.png" alt="CPU">
+                    <img src="image/cpu.png" alt="CPU">
                     <p>CPU</p>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="../image/gpu.png" alt="GPU">
+                    <img src="image/gpu.png" alt="GPU">
                     <p>VGA</p>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="../image/mtboard.png" alt="Mainboard">
+                    <img src="image/mtboard.png" alt="Mainboard">
                     <p>Mainboard</p>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="../image/monitor.png" alt="Monitor">
+                    <img src="image/monitor.png" alt="Monitor">
                     <p>Monitor</p>
                 </a>
             </li>
         </ul>
     </div>
 
-    <!-- 2. สินค้าโปรโมชั่น (4 คอลัมน์ Desktop / 2 คอลัมน์ Mobile) -->
+    <!-- 2. สินค้าโปรโมชั่น (4 คอลัมน์ x 4 แถว = 16 ชิ้น) -->
     <div class="content">
         <h1>สินค้าโปรโมชั่นพิเศษ</h1>
     </div>
 
     <div class="com-set">
         <div class="product">
-            <!-- สินค้ารายการที่ 1 - 16 -->
+            <!-- แถวที่ 1 -->
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop1.png" alt="Desktop Set 1">
+                    <img src="image/desktop1.png" alt="Desktop Set 1">
                     <p>คอมพิวเตอร์เซ็ต Gaming Set 1</p>
                     <p>25,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop2.png" alt="Desktop Set 2">
+                    <img src="image/desktop2.png" alt="Desktop Set 2">
                     <p>คอมพิวเตอร์เซ็ต Gaming Set 2</p>
                     <p>28,500 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop3.png" alt="Desktop Set 3">
+                    <img src="image/desktop3.png" alt="Desktop Set 3">
                     <p>คอมพิวเตอร์เซ็ต Gaming Set 3</p>
                     <p>31,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop4.png" alt="Desktop Set 4">
+                    <img src="image/desktop4.png" alt="Desktop Set 4">
                     <p>คอมพิวเตอร์เซ็ต Gaming Set 4</p>
                     <p>33,900 ฿</p>
                 </a>
             </div>
 
+            <!-- แถวที่ 2 -->
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop5.png" alt="Desktop Set 5">
+                    <img src="image/desktop5.png" alt="Desktop Set 5">
                     <p>คอมพิวเตอร์เซ็ต Gaming Set 5</p>
                     <p>35,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop1.png" alt="Desktop Set 6">
+                    <img src="image/desktop1.png" alt="Desktop Set 6">
                     <p>คอมพิวเตอร์เซ็ต Gaming Set 6</p>
                     <p>39,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop2.png" alt="Desktop Set 7">
+                    <img src="image/desktop2.png" alt="Desktop Set 7">
                     <p>คอมพิวเตอร์เซ็ต Workstation 1</p>
                     <p>42,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop3.png" alt="Desktop Set 8">
+                    <img src="image/desktop3.png" alt="Desktop Set 8">
                     <p>คอมพิวเตอร์เซ็ต Workstation 2</p>
                     <p>45,500 ฿</p>
                 </a>
             </div>
 
+            <!-- แถวที่ 3 -->
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop4.png" alt="Desktop Set 9">
+                    <img src="image/desktop4.png" alt="Desktop Set 9">
                     <p>คอมพิวเตอร์เซ็ต Extreme Set 1</p>
                     <p>49,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop5.png" alt="Desktop Set 10">
+                    <img src="image/desktop5.png" alt="Desktop Set 10">
                     <p>คอมพิวเตอร์เซ็ต Extreme Set 2</p>
                     <p>53,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop1.png" alt="Desktop Set 11">
+                    <img src="image/desktop1.png" alt="Desktop Set 11">
                     <p>คอมพิวเตอร์เซ็ต Ultimate Set 1</p>
                     <p>59,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop2.png" alt="Desktop Set 12">
+                    <img src="image/desktop2.png" alt="Desktop Set 12">
                     <p>คอมพิวเตอร์เซ็ต Ultimate Set 2</p>
                     <p>65,900 ฿</p>
                 </a>
             </div>
 
+            <!-- แถวที่ 4 -->
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop3.png" alt="Desktop Set 13">
+                    <img src="image/desktop3.png" alt="Desktop Set 13">
                     <p>คอมพิวเตอร์เซ็ต Custom Pro 1</p>
                     <p>72,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop4.png" alt="Desktop Set 14">
+                    <img src="image/desktop4.png" alt="Desktop Set 14">
                     <p>คอมพิวเตอร์เซ็ต Custom Pro 2</p>
                     <p>79,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop5.png" alt="Desktop Set 15">
+                    <img src="image/desktop5.png" alt="Desktop Set 15">
                     <p>คอมพิวเตอร์เซ็ต Ultra Performance</p>
                     <p>85,900 ฿</p>
                 </a>
             </div>
             <div class="set1">
                 <a href="#">
-                    <img src="../image/desktop1.png" alt="Desktop Set 16">
+                    <img src="image/desktop1.png" alt="Desktop Set 16">
                     <p>คอมพิวเตอร์เซ็ต Flagship Edition</p>
                     <p>99,900 ฿</p>
                 </a>
@@ -651,12 +590,5 @@
             <p>&copy; 2026 TECH STORE. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("navMenu");
-            menu.classList.toggle("active");
-        }
-    </script>
 </body>
 </html>

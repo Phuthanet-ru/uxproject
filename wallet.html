@@ -3,57 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TechMart Seller — Chat</title>
-<link rel="stylesheet" href="../css/styles.css">
+<title>TechMart Seller — Wallet</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <div class="topstrip"></div>
+<div class="topstrip"></div>
 <div class="header">
  <a href="dashboard.html" class="logo">TECHMART SELLER</a>
  <ul>
   <li><a class="navlink" href="dashboard.html">Dashboard</a></li>
   <li><a class="navlink" href="products.html">สินค้า</a></li>
   <li><a class="navlink" href="orders.html">คำสั่งซื้อ</a></li>
-  <li><a class="navlink active" href="chat.html">Chat</a></li>
+  <li><a class="navlink" href="chat.html">Chat</a></li>
   <li><a class="navlink" href="store.html">ร้านค้า</a></li>
   <li><a class="navlink" href="analytics.html">สรุปข้อมูล</a></li>
-  <li><a class="navlink" href="wallet.html">กระเป๋าตัง</a></li>
+  <li><a class="navlink active" href="wallet.html">กระเป๋าตัง</a></li>
  </ul>
  <form onsubmit="return false;">
  <input type="text" placeholder="ค้นหาสินค้า คำสั่งซื้อ...">
  <button type="submit">Search</button>
  </form>
- <div class="Account"><a href="../customer/customercare.html">TECH HOUSE</a></div>
+ <div class="Account"><a href="customercare.html">TECH HOUSE</a></div>
 </div>
 <nav class="mobilenav">
  <a class="navlink" href="dashboard.html">Dashboard</a>
  <a class="navlink" href="products.html">สินค้า</a>
  <a class="navlink" href="orders.html">คำสั่งซื้อ</a>
- <a class="navlink active" href="chat.html">Chat</a>
+ <a class="navlink" href="chat.html">Chat</a>
  <a class="navlink" href="store.html">ร้านค้า</a>
  <a class="navlink" href="analytics.html">สรุปข้อมูล</a>
- <a class="navlink" href="wallet.html">กระเป๋าตัง</a>
+ <a class="navlink active" href="wallet.html">กระเป๋าตัง</a>
 </nav>
 <main class="wide">
-<section class="page active" id="chat">
-<h1>Seller Chat</h1>
- <div class="card chat-layout">
- <div class="chat-list">
- <div class="person active">John Doe</div>
- <div class="person">Mike</div>
- <div class="person">Tony</div>
- <div class="person">Napat</div>
- <div class="person">Somchai</div>
+<section class="page active" id="wallet">
+<h1>กระเป๋าตัง</h1>
+ <div class="wallet-layout">
+ <div>
+ <div class="balance-card">
+ <div class="label">ยอดเงินคงเหลือ</div>
+ <div class="amount">฿45,820.00</div>
+ <button>ถอนเงิน</button>
  </div>
- <div class="chat-window">
- <div class="chat-header">John Doe</div>
- <div class="chat-body">
- <div class="tx-row"><span>John Doe: สวัสดีครับ RTX 5070 ยังมีของไหมครับ</span><span class="subtle">10:02</span></div>
- <div class="tx-row"><span>คุณ: มีครับ พร้อมส่งเลย </span><span class="subtle">10:05</span></div>
- <div class="tx-row" style="border-bottom:none;"><span>John Doe: โอเคครับ ขอสั่งเลยนะครับ</span><span class="subtle">10:06</span></div>
+ <div class="card" style="padding:18px;">
+ <div class="section-title" style="padding:0 0 12px;">รอบจ่ายเงินถัดไป</div>
+ <div class="tx-row"><span>รอบจ่ายเงิน 16 ต.ค. 2569</span><span class="tx-amt pos">฿38,250 (คาดการณ์)</span></div>
+ <div class="tx-row"><span>บัญชีธนาคาร</span><span class="subtle">กสิกรไทย •••• 4821</span></div>
  </div>
- <div class="chat-input"><input placeholder="Type message..."><button class="btn-primary">Send</button></div>
+ </div>
+ <div class="card">
+ <div class="section-title">ประวัติรายการย้อนหลัง</div>
+ <div class="tx-row"><span>Order #10291</span><span class="tx-amt pos">+ ฿29,900</span></div>
+ <div class="tx-row"><span>Order #10290</span><span class="tx-amt pos">+ ฿12,900</span></div>
+ <div class="tx-row"><span>Withdrawal</span><span class="tx-amt neg">- ฿10,000</span></div>
+ <div class="tx-row"><span>Order #10289</span><span class="tx-amt pos">+ ฿7,800</span></div>
+ <div class="tx-row"><span>Order #10288</span><span class="tx-amt pos">+ ฿2,490</span></div>
+ <div class="tx-row"><span>Withdrawal</span><span class="tx-amt neg">- ฿15,000</span></div>
+ <div class="tx-row"><span>Order #10287</span><span class="tx-amt pos">+ ฿1,890</span></div>
+ <div class="tx-row"><span>Order #10286</span><span class="tx-amt pos">+ ฿2,490</span></div>
  </div>
  </div>
 </section>

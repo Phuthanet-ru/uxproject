@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TechMart Seller — Orders</title>
-<link rel="stylesheet" href="../css/styles.css">
+<title>TechMart Seller — productdetail</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -13,8 +13,8 @@
  <a href="dashboard.html" class="logo">TECHMART SELLER</a>
  <ul>
   <li><a class="navlink" href="dashboard.html">Dashboard</a></li>
-  <li><a class="navlink" href="products.html">สินค้า</a></li>
-  <li><a class="navlink active" href="orders.html">คำสั่งซื้อ</a></li>
+  <li><a class="navlink active" href="products.html">สินค้า</a></li>
+  <li><a class="navlink" href="orders.html">คำสั่งซื้อ</a></li>
   <li><a class="navlink" href="chat.html">Chat</a></li>
   <li><a class="navlink" href="store.html">ร้านค้า</a></li>
   <li><a class="navlink" href="analytics.html">สรุปข้อมูล</a></li>
@@ -24,41 +24,53 @@
  <input type="text" placeholder="ค้นหาสินค้า คำสั่งซื้อ...">
  <button type="submit">Search</button>
  </form>
- <div class="Account"><a href="../customer/customercare.html">TECH HOUSE</a></div>
+ <div class="Account"><a href="customercare.html">TECH HOUSE</a></div>
 </div>
 <nav class="mobilenav">
  <a class="navlink" href="dashboard.html">Dashboard</a>
- <a class="navlink" href="products.html">สินค้า</a>
- <a class="navlink active" href="orders.html">คำสั่งซื้อ</a>
+ <a class="navlink active" href="products.html">สินค้า</a>
+ <a class="navlink" href="orders.html">คำสั่งซื้อ</a>
  <a class="navlink" href="chat.html">Chat</a>
  <a class="navlink" href="store.html">ร้านค้า</a>
  <a class="navlink" href="analytics.html">สรุปข้อมูล</a>
  <a class="navlink" href="wallet.html">กระเป๋าตัง</a>
 </nav>
 <main>
-<section class="page active" id="orders">
-<h1>คำสั่งซื้อ</h1>
- <div class="tabs">
- <button class="active">Pending</button><button>Paid</button><button>Shipping</button><button>Done</button>
+<section class="page active" id="productdetail">
+<h1>รายละเอียดสินค้า</h1>
+ <div class="card">
+ <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border);">
+ <strong>RTX 5070 Gaming GPU</strong>
+ <span class="badge active">Active</span>
  </div>
- <div class="order-cols">
- <div class="order-col"><h2>Pending</h2>
- <div class="order-card"><div class="id">#10293</div>DDR5 16GB<div class="price">฿3,900</div><a>Detail</a></div>
- <div class="order-card"><div class="id">#10296</div>Keyboard<div class="price">฿1,890</div><a>Detail</a></div>
+ <div class="pd-layout">
+ <div class="pd-img">
+  <img src="image/gpu.png" alt="Product img" class="Product-img">
+</div>
+ <div class="pd-info">
+ <div class="price">฿29,900</div>
+ <div class="subtle">Stock: 5</div>
+ <div style="margin-top:20px;"><button class="btn-primary">Edit Product</button> <button class="btn-ghost" onclick="location.href='products.html'">← Product</button></div>
  </div>
- <div class="order-col"><h2>Paid</h2>
- <div class="order-card" onclick="location.href='orderdetail.html'"><div class="id">#10291</div>RTX 5070 ×1<div class="price">฿29,900</div><a>Detail</a></div>
- <div class="order-card"><div class="id">#10290</div>DDR5 ×2<div class="price">฿7,800</div><a>Detail</a></div>
- <div class="order-card"><div class="id">#10286</div>SSD 1TB<div class="price">฿2,490</div><a>Detail</a></div>
+ <div class="pd-side">
+ <div class="section-title" style="padding:0 0 10px;">Performance</div>
+ <div class="row"><span>Views</span><span>1,245</span></div>
+ <div class="row"><span>Sales</span><span>32</span></div>
+ <div class="row"><span>Rating</span><span>4.8 (56)</span></div>
  </div>
- <div class="order-col"><h2>Shipping</h2>
- <div class="order-card"><div class="id">#10289</div>Ryzen 7<div class="price">฿12,900</div><a>Detail</a></div>
- <div class="order-card"><div class="id">#10285</div>Monitor 27"<div class="price">฿7,900</div><a>Detail</a></div>
  </div>
- <div class="order-col"><h2>Done</h2>
- <div class="order-card"><div class="id">#10280</div>Mouse<div class="price">฿1,500</div><a>Detail</a></div>
- <div class="order-card"><div class="id">#10279</div>RTX 4060<div class="price">฿10,900</div><a>Detail</a></div>
  </div>
+
+ <div class="card" style="margin-top:22px;padding:20px;">
+ <div class="section-title" style="padding:0 0 14px;">รายละเอียดสินค้า</div>
+ <div class="subtle">การ์ดจอประสิทธิภาพสูงรุ่นใหม่ล่าสุด รองรับ Ray Tracing และ DLSS รุ่นล่าสุด เหมาะสำหรับงานเกมมิ่งระดับ 1440p–4K และงานตัดต่อวิดีโอ รับประกันศูนย์ 3 ปี</div>
+ </div>
+
+ <div class="card" style="margin-top:22px;padding:20px;">
+ <div class="section-title" style="padding:0 0 14px;">รีวิวจากลูกค้า (56)</div>
+ <div class="tx-row"><span>"แรงตามสเปก เย็นดี เสียงเงียบ" — John Doe</span><span class="subtle">3 วันที่แล้ว</span></div>
+ <div class="tx-row"><span>"ส่งไวมาก แพ็คกันกระแทกดี" — Mike</span><span class="subtle">1 สัปดาห์ที่แล้ว</span></div>
+ <div class="tx-row"><span>"คุ้มราคา เล่นเกมลื่นมาก" — Tony</span><span class="subtle">2 สัปดาห์ที่แล้ว</span></div>
  </div>
 </section>
 </main>
