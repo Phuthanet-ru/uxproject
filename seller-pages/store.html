@@ -3,58 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Seller — Store</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>TechMart Seller — Store</title>
 <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-<div class="topbar">
-  <div class="logo">Tech<span>Mart</span><span style="font-size:10px;color:#6b86b8;font-weight:600;margin-left:4px;">SELLER</span></div>
-  <input class="search" placeholder="Search products, orders...">
-  <div class="seller-tag"><div class="avatar">🙂</div> TECH HOUSE</div>
+  <div class="topstrip"></div>
+<div class="header">
+ <a href="dashboard.html" class="logo">TECHMART SELLER</a>
+ <ul>
+  <li><a class="navlink" href="dashboard.html">Dashboard</a></li>
+  <li><a class="navlink" href="products.html">สินค้า</a></li>
+  <li><a class="navlink" href="orders.html">คำสั่งซื้อ</a></li>
+  <li><a class="navlink" href="chat.html">Chat</a></li>
+  <li><a class="navlink active" href="store.html">ร้านค้า</a></li>
+  <li><a class="navlink" href="analytics.html">สรุปข้อมูล</a></li>
+  <li><a class="navlink" href="wallet.html">กระเป๋าตัง</a></li>
+ </ul>
+ <form onsubmit="return false;">
+ <input type="text" placeholder="ค้นหาสินค้า คำสั่งซื้อ...">
+ <button type="submit">Search</button>
+ </form>
+ <div class="Account"><a href="../customer/customercare.html">TECH HOUSE</a></div>
 </div>
-<div class="nav">
-  <a class="navlink" href="dashboard.html">Dashboard</a>
-  <a class="navlink" href="products.html">Products</a>
-  <a class="navlink" href="orders.html">Orders</a>
-  <a class="navlink" href="chat.html">Chat</a>
-  <a class="navlink active" href="store.html">Store</a>
-  <a class="navlink" href="analytics.html">Analytics</a>
-  <a class="navlink" href="wallet.html">Wallet</a>
-</div>
-
-<main>
+<nav class="mobilenav">
+ <a class="navlink" href="dashboard.html">Dashboard</a>
+ <a class="navlink" href="products.html">สินค้า</a>
+ <a class="navlink" href="orders.html">คำสั่งซื้อ</a>
+ <a class="navlink" href="chat.html">Chat</a>
+ <a class="navlink active" href="store.html">ร้านค้า</a>
+ <a class="navlink" href="analytics.html">สรุปข้อมูล</a>
+ <a class="navlink" href="wallet.html">กระเป๋าตัง</a>
+</nav>
+<main class="wide">
 <section class="page active" id="store">
-<h1>Seller Store</h1>
-    <div class="card">
-      <div class="store-cover">STORE COVER</div>
-      <div class="store-head">
-        <h2>TECH HOUSE</h2>
-        <div class="subtle">★ 4.9 · 128 Sales &nbsp; <button class="btn-primary" style="padding:6px 14px;">Follow</button> <button class="btn-ghost" style="padding:6px 14px;">Contact</button></div>
-      </div>
-      <div class="store-tabs"><span class="active">Products</span><span>Reviews</span><span>About</span></div>
-      <div class="store-body">
-        <div class="store-cats">GPU<br>CPU<br>RAM<br>Keyboard</div>
-        <div class="prod-grid">
-          <div class="prod-tile"><div class="ph"></div>RTX 5070<div class="price">฿29,900</div></div>
-          <div class="prod-tile"><div class="ph"></div>RTX 4060<div class="price">฿32,900</div></div>
-          <div class="prod-tile"><div class="ph"></div>Ryzen 7<div class="price">฿12,900</div></div>
-          <div class="prod-tile"><div class="ph"></div>RAM DDR5<div class="price">฿3,900</div></div>
-        </div>
-      </div>
+<h1>ร้านค้า ของฉัน</h1>
+ <div class="card">
+ <div class="store-cover">
+  <img src="../image/desktop3.png" alt="Store Cover" class="cover-img">
+ </div>
+ <div class="store-head">
+ <h2>TECH HOUSE</h2>
+ <div class="subtle">4.9 · 128 Sales &nbsp; <button class="btn-primary" style="padding:6px 14px;">Follow</button> <button class="btn-ghost" style="padding:6px 14px;">Contact</button></div>
+ </div>
+ <div class="store-tabs"><span class="active">Products</span><span>Reviews</span><span>About</span></div>
+ <div class="store-body">
+ <div class="store-cats">GPU<br>CPU<br>RAM<br>Keyboard</div>
+ <div class="prod-grid">
+    <div class="prod-tile"> <img src="../image/gpu.png" alt="RTX 5070" class="prod-img">
+      RTX 5070
+      <div class="price">฿29,900</div>
     </div>
+    <div class="prod-tile"><img src="../image/gpu.png" alt="RTX 4060" class="prod-img">
+      RTX 4060
+      <div class="price">฿32,900</div>
+    </div>
+    <div class="prod-tile"><img src="../image/cpu.png" alt="cpu" class="prod-img">
+      Ryzen 7
+      <div class="price">฿12,900</div>
+    </div>
+    <div class="prod-tile"><img src="../image/ram_ddr5.jpg" alt="ramddr5" class="prod-img">
+      RAM DDR5
+      <div class="price">฿3,900</div>
+    </div>
+    <div class="prod-tile"><img src="../image/ssd.jpg" alt="SSD NVMe 1TB" class="prod-img">
+      SSD NVMe 1TB
+      <div class="price">฿2,490</div>
+    </div>
+    <div class="prod-tile"><img src="../image/Keyboard.png" alt="Keyboard" class="prod-img">
+      Keyboard
+      <div class="price">฿1,890</div>
+    </div>
+    <div class="prod-tile"><img src="../image/monitor.png" alt="Monitor" class="prod-img">
+      27" Monitor
+      <div class="price">฿7,900</div>
+    </div>
+    <div class="prod-tile"><img src="../image/mouse.jpg" alt="Mouse" class="prod-img">
+      Wireless Mouse
+      <div class="price">฿1,500</div>
+    </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="card" style="margin-top:22px;padding:20px;">
+ <div class="section-title" style="padding:0 0 14px;">รีวิวล่าสุดจากลูกค้า</div>
+ <div class="tx-row"><span>"ส่งไว แพ็คดีมาก การ์ดจอของแท้ 100%" — John Doe</span><span class="subtle">2 วันที่แล้ว</span></div>
+ <div class="tx-row"><span>"ร้านตอบแชทเร็ว ให้คำแนะนำสเปกดีมาก" — Mike</span><span class="subtle">5 วันที่แล้ว</span></div>
+ <div class="tx-row"><span>"สินค้าตรงปก ราคาคุ้มค่า" — Tony</span><span class="subtle">1 สัปดาห์ที่แล้ว</span></div>
+ </div>
 </section>
 </main>
 
-<script>
-document.querySelectorAll('.tabs button').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-  });
+<footer>
+ <div class="footer-container">
+ <div class="footer-section">
+ <h2>เกี่ยวกับร้านค้า</h2>
+ <p>TECH HOUSE ศูนย์รวมอุปกรณ์คอมพิวเตอร์คุณภาพ จำหน่ายผ่าน TechMart Marketplace พร้อมบริการจัดส่งทั่วประเทศและทีมซัพพอร์ตสำหรับผู้ขายตลอด 24 ชั่วโมง</p>
+ </div>
+ <div class="footer-section">
+ <h3>ช่วยเหลือผู้ขาย</h3>
+ <ul>
+ <li><a href="#">คู่มือเริ่มต้นขายสินค้า</a></li>
+ <li><a href="#">นโยบายร้านค้าและการจัดส่ง</a></li>
+ <li><a href="#">การถอนเงินและรอบจ่ายเงิน</a></li>
+ <li><a href="#">ศูนย์ช่วยเหลือผู้ขาย</a></li>
+ </ul>
+ </div>
+ <div class="footer-section">
+ <h3>ติดต่อฝ่ายซัพพอร์ต</h3>
+ <p>Email: seller-support@techmart.com</p>
+ <p>Tel: 02-017-8998</p>
+ <p>เวลาทำการ: จันทร์ - อาทิตย์ 09:00 - 20:00 น.</p>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>&copy; 2026 TechMart Seller Center. All Rights Reserved.</p>
+ </div>
+</footer>
+
+
+<script>document.querySelectorAll('.tabs button').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+ btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+ });
 });
 </script>
 </body>

@@ -3,61 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Seller — addproduct</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>TechMart Seller — addproduct</title>
 <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-<div class="topbar">
-  <div class="logo">Tech<span>Mart</span><span style="font-size:10px;color:#6b86b8;font-weight:600;margin-left:4px;">SELLER</span></div>
-  <input class="search" placeholder="Search products, orders...">
-  <div class="seller-tag"><div class="avatar">🙂</div> TECH HOUSE</div>
+  <div class="topstrip"></div>
+<div class="header">
+ <a href="dashboard.html" class="logo">TECHMART SELLER</a>
+ <ul>
+ <li><a class="navlink" href="dashboard.html">Dashboard</a></li>
+ <li><a class="navlink active" href="products.html">สินค้า</a></li>
+ <li><a class="navlink" href="orders.html">คำสั่งซื้อ</a></li>
+ <li><a class="navlink" href="chat.html">Chat</a></li>
+ <li><a class="navlink" href="store.html">ร้านค้า</a></li>
+ <li><a class="navlink" href="analytics.html">สรุปข้อมูล</a></li>
+ <li><a class="navlink" href="wallet.html">กระเป๋าตัง</a></li>
+ </ul>
+ <form onsubmit="return false;">
+ <input type="text" placeholder="ค้นหาสินค้า คำสั่งซื้อ...">
+ <button type="submit">Search</button>
+ </form>
+ <div class="Account"><a href="../customer/customercare.html">TECH HOUSE</a></div>
 </div>
-<div class="nav">
-  <a class="navlink" href="dashboard.html">Dashboard</a>
-  <a class="navlink" href="products.html">Products</a>
-  <a class="navlink" href="orders.html">Orders</a>
-  <a class="navlink" href="chat.html">Chat</a>
-  <a class="navlink" href="store.html">Store</a>
-  <a class="navlink" href="analytics.html">Analytics</a>
-  <a class="navlink" href="wallet.html">Wallet</a>
-</div>
-
+<nav class="mobilenav">
+ <a class="navlink" href="dashboard.html">Dashboard</a>
+ <a class="navlink active" href="products.html">สินค้า</a>
+ <a class="navlink" href="orders.html">คำสั่งซื้อ</a>
+ <a class="navlink" href="chat.html">Chat</a>
+ <a class="navlink" href="store.html">ร้านค้า</a>
+ <a class="navlink" href="analytics.html">สรุปข้อมูล</a>
+ <a class="navlink" href="wallet.html">กระเป๋าตัง</a>
+</nav>
 <main>
 <section class="page active" id="addproduct">
-<h1>Add Product</h1>
-    <div class="stepper">
-      <div class="dot active">1</div><span>Basic Info</span><div class="line"></div>
-      <div class="dot">2</div><span>Images</span><div class="line"></div>
-      <div class="dot">3</div><span>Specification</span><div class="line"></div>
-      <div class="dot">4</div><span>Publish</span>
-    </div>
-    <div class="card" style="padding:22px;">
-      <div class="form">
-        <label>Product Name</label><input placeholder="e.g. RTX 5070 Gaming GPU">
-        <div class="form-grid">
-          <div><label>Category</label><select><option>GPU</option></select></div>
-          <div><label>Brand</label><select><option>ASUS</option></select></div>
-        </div>
-        <label>Description</label><textarea rows="4" placeholder="Describe the product..."></textarea>
-      </div>
-      <div style="margin-top:18px;display:flex;gap:10px;justify-content:flex-end;">
-        <button class="btn-ghost">Save Draft</button>
-        <button class="btn-primary">Continue</button>
-      </div>
-    </div>
+<h1>เพิ่มสินค้า</h1>
+ <div class="stepper">
+ <div class="dot active">1</div><span>Basic Info</span><div class="line"></div>
+ <div class="dot">2</div><span>Images</span><div class="line"></div>
+ <div class="dot">3</div><span>Specification</span><div class="line"></div>
+ <div class="dot">4</div><span>Publish</span>
+ </div>
+ <div class="card" style="padding:22px;">
+ <div class="form">
+ <label>Product Name</label><input placeholder="e.g. RTX 5070 Gaming GPU">
+ <div class="form-grid">
+ <div><label>Category</label><select><option>GPU</option></select></div>
+ <div><label>Brand</label><select><option>ASUS</option></select></div>
+ </div>
+ <label>Description</label><textarea rows="4" placeholder="Describe the product..."></textarea>
+ </div>
+ <div style="margin-top:18px;display:flex;gap:10px;justify-content:flex-end;">
+ <button class="btn-ghost">Save Draft</button>
+ <button class="btn-primary">Continue</button>
+ </div>
+ </div>
+
+ <div class="card" style="margin-top:22px;padding:20px;">
+ <div class="section-title" style="padding:0 0 14px;">เคล็ดลับลงสินค้าให้ขายดี</div>
+ <div class="tx-row"><span>ใช้รูปสินค้าอย่างน้อย 4 มุม พื้นหลังสะอาด</span></div>
+ <div class="tx-row"><span>เขียนรายละเอียดสเปกให้ครบ ลดคำถามจากลูกค้า</span></div>
+ <div class="tx-row" style="border-bottom:none;"><span>ตั้งราคาที่แข่งขันได้โดยเทียบกับร้านค้าอื่นในหมวดเดียวกัน</span></div>
+ </div>
 </section>
 </main>
 
-<script>
-document.querySelectorAll('.tabs button').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-  });
+<footer>
+ <div class="footer-container">
+ <div class="footer-section">
+ <h2>เกี่ยวกับร้านค้า</h2>
+ <p>TECH HOUSE ศูนย์รวมอุปกรณ์คอมพิวเตอร์คุณภาพ จำหน่ายผ่าน TechMart Marketplace พร้อมบริการจัดส่งทั่วประเทศและทีมซัพพอร์ตสำหรับผู้ขายตลอด 24 ชั่วโมง</p>
+ </div>
+ <div class="footer-section">
+ <h3>ช่วยเหลือผู้ขาย</h3>
+ <ul>
+ <li><a href="#">คู่มือเริ่มต้นขายสินค้า</a></li>
+ <li><a href="#">นโยบายร้านค้าและการจัดส่ง</a></li>
+ <li><a href="#">การถอนเงินและรอบจ่ายเงิน</a></li>
+ <li><a href="#">ศูนย์ช่วยเหลือผู้ขาย</a></li>
+ </ul>
+ </div>
+ <div class="footer-section">
+ <h3>ติดต่อฝ่ายซัพพอร์ต</h3>
+ <p>Email: seller-support@techmart.com</p>
+ <p>Tel: 02-017-8998</p>
+ <p>เวลาทำการ: จันทร์ - อาทิตย์ 09:00 - 20:00 น.</p>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>&copy; 2026 TechMart Seller Center. All Rights Reserved.</p>
+ </div>
+</footer>
+
+
+<script>document.querySelectorAll('.tabs button').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+ btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+ });
 });
 </script>
 </body>

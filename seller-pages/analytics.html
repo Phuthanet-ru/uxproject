@@ -3,93 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Seller — Analytics</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>TechMart Seller — Analytics</title>
 <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-<div class="topbar">
-  <div class="logo">Tech<span>Mart</span>
-    <span style="font-size:10px;color:#6b86b8;font-weight:600;margin-left:4px;">SELLER</span>
-  </div>
-  <input class="search" placeholder="Search products, orders...">
-  <div class="seller-tag"><div class="avatar">🙂
-  </div> TECH HOUSE</div>
+  <div class="topstrip"></div>
+<div class="header">
+ <a href="dashboard.html" class="logo">TECHMART SELLER</a>
+ <ul>
+  <li><a class="navlink" href="dashboard.html">Dashboard</a></li>
+  <li><a class="navlink" href="products.html">สินค้า</a></li>
+  <li><a class="navlink" href="orders.html">คำสั่งซื้อ</a></li>
+  <li><a class="navlink" href="chat.html">Chat</a></li>
+  <li><a class="navlink" href="store.html">ร้านค้า</a></li>
+  <li><a class="navlink active" href="analytics.html">สรุปข้อมูล</a></li>
+  <li><a class="navlink" href="wallet.html">กระเป๋าตัง</a></li>
+ </ul>
+ <form onsubmit="return false;">
+ <input type="text" placeholder="ค้นหาสินค้า คำสั่งซื้อ...">
+ <button type="submit">Search</button>
+ </form>
+ <div class="Account"><a href="../customer/customercare.html">TECH HOUSE</a></div>
 </div>
-<div class="nav">
-  <a class="navlink" href="dashboard.html">Dashboard</a>
-  <a class="navlink" href="products.html">Products</a>
-  <a class="navlink" href="orders.html">Orders</a>
-  <a class="navlink" href="chat.html">Chat</a>
-  <a class="navlink" href="store.html">Store</a>
-  <a class="navlink active" href="analytics.html">Analytics</a>
-  <a class="navlink" href="wallet.html">Wallet</a>
-</div>
-
-<main>
+<nav class="mobilenav">
+ <a class="navlink" href="dashboard.html">Dashboard</a>
+ <a class="navlink" href="products.html">สินค้า</a>
+ <a class="navlink" href="orders.html">คำสั่งซื้อ</a>
+ <a class="navlink" href="chat.html">Chat</a>
+ <a class="navlink" href="store.html">ร้านค้า</a>
+ <a class="navlink active" href="analytics.html">สรุปข้อมูล</a>
+ <a class="navlink" href="wallet.html">กระเป๋าตัง</a>
+</nav>
+<main class="wide">
 <section class="page active" id="analytics">
-<h1>Sales Analytics</h1>
-    <div class="stat-row" style="grid-template-columns:repeat(4,1fr);">
-      <div class="card stat"><div class="label">
-        Revenue
-      </div>
-      <div class="value">
-        ฿125K
-      </div>
-    </div>
-      <div class="card stat">
-        <div class="label">
-          Orders
-        </div>
-        <div class="value">
-          245
-        </div>
-      </div>
-      <div class="card stat">
-        <div class="label">
-          Products
-        </div>
-        <div class="value">
-          58
-        </div>
-      </div>
-      <div class="card stat">
-        <div class="label">
-          Avg Order
-        </div>
-        <div class="value">
-          ฿3,200
-        </div>
-      </div>
-    </div>
-    <div class="card" style="padding:18px;margin-bottom:16px;">
-      <div class="subtle" style="margin-bottom:10px;">
-        Revenue Chart
-      </div>
-      <svg viewBox="0 0 400 100" width="100%" height="100">
-        <polyline points="0,80 60,60 120,70 180,30 240,45 300,15 360,25 400,10" fill="none" stroke="#2F6FED" stroke-width="3"/>
-      </svg>
-    </div>
-    <div class="card" style="padding:18px;">
-      <div class="subtle" style="margin-bottom:6px;">
-        Top Products
-      </div>
-      <div style="font-size:13.5px;">
-        1. RTX 5070 &nbsp; 2. Ryzen 7 &nbsp; 3. DDR5 RAM
-      </div>
-    </div>
+<h1>สรุปข้อมูล</h1>
+ <div class="stat-row" style="grid-template-columns:repeat(3,1fr);">
+ <div class="card stat"><div class="label">รายได้</div><div class="value">฿125K</div></div>
+ <div class="card stat"><div class="label">คำสั่งซื้อ</div><div class="value">245</div></div>
+ <div class="card stat"><div class="label">สินค้า</div><div class="value">58</div></div>
+ </div>
+ <div class="stat-row" style="grid-template-columns:repeat(3,1fr);">
+ <div class="card stat"><div class="label">มูลค่าคำสั่งซื้อเฉลี่ยต่อครั้ง</div><div class="value">฿3,200</div></div>
+ <div class="card stat"><div class="label">ผู้เยี่ยมชม (30D)</div><div class="value">12,480</div></div>
+ <div class="card stat"><div class="label">Conversion Rate</div><div class="value">1.96%</div></div>
+ </div>
+ <div class="card" style="padding:18px;margin-bottom:16px;">
+ <div class="subtle" style="margin-bottom:10px;">แผนภูมิรายได้</div>
+ <svg viewBox="0 0 400 100" width="100%" height="100"><polyline points="0,80 60,60 120,70 180,30 240,45 300,15 360,25 400,10" fill="none" stroke="#2F6FED" stroke-width="3"/></svg>
+ </div>
+ <div class="card" style="padding:18px;margin-bottom:16px;">
+ <div class="section-title" style="padding:0 0 12px;">สินค้ายอดนิยม</div>
+ <table>
+ <tr><th>สินค้า</th><th>ขายแล้ว</th><th>รายได้</th></tr>
+ <tr><td>RTX 5070 Gaming GPU</td><td>32</td><td>฿956,800</td></tr>
+ <tr><td>Ryzen 7 7800X3D</td><td>21</td><td>฿270,900</td></tr>
+ <tr><td>RAM DDR5 16GB/6000MHz</td><td>48</td><td>฿187,200</td></tr>
+ </table>
+ </div>
+ <div class="card" style="padding:18px;margin-bottom:16px;">
+ <div class="section-title" style="padding:0 0 12px;">ยอดขายตามหมวดหมู่</div>
+ <div class="tx-row"><span>GPU</span><span>฿580,000</span></div>
+ <div class="tx-row"><span>CPU</span><span>฿270,900</span></div>
+ <div class="tx-row"><span>RAM</span><span>฿187,200</span></div>
+ <div class="tx-row"><span>Accessories</span><span>฿42,500</span></div>
+ </div>
+ <div class="card" style="padding:18px;">
+ <div class="section-title" style="padding:0 0 12px;">กิจกรรมลูกค้าล่าสุด</div>
+ <table>
+ <tr><th>ลูกค้า</th><th>กิจกรรม</th><th>เวลา</th></tr>
+ <tr><td>John Doe</td><td>ซื้อ RTX 5070</td><td>2 ชม.ที่แล้ว</td></tr>
+ <tr><td>Mike</td><td>ดูสินค้า Ryzen 7</td><td>4 ชม.ที่แล้ว</td></tr>
+ <tr><td>Tony</td><td>ให้รีวิว 5 ดาว</td><td>1 วันที่แล้ว</td></tr>
+ </table>
+ </div>
 </section>
 </main>
 
-<script>
-document.querySelectorAll('.tabs button').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-  });
+<footer>
+ <div class="footer-container">
+ <div class="footer-section">
+ <h2>เกี่ยวกับร้านค้า</h2>
+ <p>TECH HOUSE ศูนย์รวมอุปกรณ์คอมพิวเตอร์คุณภาพ จำหน่ายผ่าน TechMart Marketplace พร้อมบริการจัดส่งทั่วประเทศและทีมซัพพอร์ตสำหรับผู้ขายตลอด 24 ชั่วโมง</p>
+ </div>
+ <div class="footer-section">
+ <h3>ช่วยเหลือผู้ขาย</h3>
+ <ul>
+ <li><a href="#">คู่มือเริ่มต้นขายสินค้า</a></li>
+ <li><a href="#">นโยบายร้านค้าและการจัดส่ง</a></li>
+ <li><a href="#">การถอนเงินและรอบจ่ายเงิน</a></li>
+ <li><a href="#">ศูนย์ช่วยเหลือผู้ขาย</a></li>
+ </ul>
+ </div>
+ <div class="footer-section">
+ <h3>ติดต่อฝ่ายซัพพอร์ต</h3>
+ <p>Email: seller-support@techmart.com</p>
+ <p>Tel: 02-017-8998</p>
+ <p>เวลาทำการ: จันทร์ - อาทิตย์ 09:00 - 20:00 น.</p>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p>&copy; 2026 TechMart Seller Center. All Rights Reserved.</p>
+ </div>
+</footer>
+
+
+<script>document.querySelectorAll('.tabs button').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+ btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+ });
 });
 </script>
 </body>
